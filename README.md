@@ -1,174 +1,135 @@
-# Monytix - Financial Clarity, Simplified
+# 🚀 Monytix - Investor Ready Fintech Platform
 
-A modern, responsive React website showcasing Monytix's comprehensive financial solutions. This project replicates the design from the Gamma.app presentation with beautiful animations and interactive elements.
+**Comprehensive financial management platform designed for the Indian market**
 
-## ✨ Features
-
-- **Modern Design**: Dark theme with golden accents matching the original design
-- **Smooth Animations**: Powered by Framer Motion for elegant scroll-triggered animations
-- **Responsive Layout**: Optimized for desktop, tablet, and mobile devices
-- **Interactive Elements**: Hover effects, animated charts, and dynamic components
-- **Performance Optimized**: Efficient React components with intersection observers
-
-## 🎯 Sections
-
-1. **Hero Section**: Introduction to Comprehensive Financial Solutions
-2. **Budgeting Section**: Personalized budgeting features
-3. **Wellbeing Section**: Financial well-being with Monytix
-4. **Process Section**: 5-step pyramid showing the Monytix process
-5. **Dashboard Section**: Interactive financial dashboard mockup
-6. **Command Centre**: Personal finance management with credit card mockup
-7. **Plans Section**: B2B and B2C offerings with city skyline background
-
-## 🛠 Technologies Used
-
-- **React 18**: Modern React with hooks and functional components
-- **Framer Motion**: Advanced animations and transitions
-- **React Intersection Observer**: Scroll-triggered animations
-- **CSS3**: Custom styling with gradients, animations, and responsive design
-- **Google Fonts**: Playfair Display (serif) and Inter (sans-serif)
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
-
-### Installation
-
-1.Clone the repository
-
-```bash
-git clone https://github.com/your-username/monytix-website.git
-cd monytix-website
-```
-
-2.Install dependencies
-
-```bash
-npm install
-```
-
-3.Start the development server
-
-```bash
-npm start
-```
-
-4.Open [http://localhost:3000](http://localhost:3000) to view it in the browser
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-## 📱 Responsive Design
-
-The website is fully responsive and optimized for:
-
-- **Desktop**: 1200px+ (Full layout with side-by-side content)
-- **Tablet**: 768px - 1199px (Stacked layout with adjusted spacing)
-- **Mobile**: <768px (Single column layout with optimized touch targets)
-
-## 🎨 Design Elements
-
-### Color Palette
-
-- **Primary Gold**: #d4af37
-- **Background Dark**: #1a1a1a
-- **Secondary Dark**: #2a2a2a
-- **Text Light**: #ffffff
-- **Text Muted**: #b8b8b8
-
-### Typography
-
-- **Headings**: Playfair Display (elegant serif)
-- **Body Text**: Inter (clean sans-serif)
-- **Special Elements**: Courier New (monospace for card numbers)
-
-### Animations
-
-- **Scroll Animations**: Fade in, slide up, and slide in effects
-- **Hover Effects**: Smooth transitions and transforms
-- **Loading Animations**: Staggered animations for list items
-- **3D Effects**: CSS transforms for depth and perspective
-
-## 📊 Interactive Components
-
-### Financial Dashboard
-
-- Real-time balance display
-- Interactive pie charts
-- Animated bar charts
-- Spending categorization
-
-### Process Pyramid
-
-- 5-level animated pyramid
-- Hover effects with golden highlights
-- Step-by-step process visualization
-
-### Credit Card Mockup
-
-- Realistic card design with chip and details
-- 3D perspective effects
-- Branded with Monytix logo
-
-### City Skyline
-
-- Animated buildings with glowing effects
-- Walking silhouettes
-- Sunset gradient background
-
-## 🔧 Customization
-
-### Adding New Sections
-
-1. Create a new component in `src/components/`
-2. Add corresponding CSS file
-3. Import and use in `src/App.js`
-
-### Modifying Animations
-
-- Edit `framer-motion` configurations in component files
-- Adjust timing, delays, and easing in transition objects
-- Customize `useInView` thresholds for scroll triggers
-
-### Updating Content
-
-- Modify text content directly in component JSX
-- Update images by replacing files in `public/` directory
-- Adjust color scheme in CSS custom properties
-
-## 📈 Performance
-
-- **Lazy Loading**: Animations trigger only when sections are in view
-- **Optimized Images**: Proper sizing and compression
-- **Code Splitting**: React's built-in code splitting
-- **CSS Optimization**: Efficient selectors and minimal repaints
-
-## 🌟 Key Highlights
-
-- **Pixel-Perfect Design**: Matches the original Gamma.app presentation
-- **Smooth User Experience**: Fluid animations and interactions
-- **Professional Presentation**: Corporate-grade design and functionality
-- **Mobile-First Approach**: Responsive design that works on all devices
-- **Accessibility**: Proper semantic HTML and keyboard navigation
-
-## 📝 License
-
-This project is created for demonstration purposes. Please ensure proper licensing for any commercial use.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test on multiple devices
-5. Submit a pull request
+## 🎯 **DEPLOYMENT STATUS**
+- ✅ **GitHub Repository**: Live and Active
+- ✅ **Auto-Deployment**: Configured via Webhook  
+- ✅ **Production Build**: Optimized (104KB total)
+- ✅ **SSL Certificate**: Enabled
+- 🔄 **Last Updated**: Auto-deployed from GitHub
 
 ---
 
-**Built with ❤️ using React and modern web technologies**
+## 📊 **Investor Presentation Sections**
+
+This website serves as a comprehensive Series A fundraising presentation, featuring:
+
+### 🏢 **1. Market Opportunity**
+- **₹4.2 Trillion** Indian personal finance market analysis
+- **450M+ smartphone users** as target demographic
+- **68% financially underserved** population opportunity
+- **₹50Cr+ immediate** serviceable market
+
+### 👥 **2. World-Class Team**
+- **Sandeep Malla** - Founder & CEO (Product Strategy & Business Development)
+- **Santosh Malla** - CTO & Co-Founder (Full-Stack Development & AI/ML)
+- **Bhuvanesh Jain** - Head of Financial Planning (Investment Strategy & Wealth Management)
+- **Strategic Advisors** from leading fintech companies
+
+### 📈 **3. Proven Early Traction**
+- **5,000+ pre-launch signups** with +200% month-over-month growth
+- **12 pilot partners** actively testing the platform
+- **₹2.5Cr Letters of Intent** pipeline from enterprise clients
+- **85% user interest score** from market research
+
+### 🏆 **4. Competitive Advantages**
+- **AI-Powered Personalization** - First in India for financial advice
+- **Comprehensive Integration** - Single platform for all financial needs
+- **Indian Market Focus** - Built specifically for local financial culture
+- **Educational Component** - Integrated financial literacy programs
+
+### 💰 **5. Clear Revenue Model**
+- **Multiple Revenue Streams**: Subscriptions (60%), Enterprise (25%), Transactions (10%), Data (5%)
+- **Pricing Strategy**: Free tier, Premium (₹299/month), Family (₹499/month)
+- **Enterprise Solutions**: ₹40-50 per employee/month
+- **₹500Cr ARR target** by 2027 with 25% EBITDA margins
+
+---
+
+## 🛠 **Technical Stack**
+
+- **Frontend**: React.js with Framer Motion animations
+- **UI/UX**: Custom responsive design with glassmorphism effects
+- **Analytics**: Google Analytics 4 integration
+- **SEO**: Comprehensive meta tags and structured data
+- **Performance**: Optimized bundle (94.55 kB JS, 9.45 kB CSS)
+- **PWA**: Progressive Web App features enabled
+
+---
+
+## 🚀 **Getting Started**
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn package manager
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/magnatepoint/monytix-website.git
+
+# Navigate to project directory  
+cd monytix-website
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
+```
+
+### Deployment
+
+The website is configured for automatic deployment to Hostinger via GitHub webhooks:
+
+1. **Push to main branch** triggers auto-deployment
+2. **Production build** runs automatically  
+3. **Live website** updates within minutes
+
+---
+
+## 📱 **Features**
+
+### 🎯 **User Experience**
+- Interactive financial dashboard demos
+- Smooth scroll navigation between sections
+- Mobile-responsive design (tested on all devices)
+- Professional animations and micro-interactions
+
+### 📊 **Interactive Components**
+- Live pie charts for expense categorization
+- Interactive bar charts for spending analysis
+- Hover effects and click interactions
+- Real-time data visualization demos
+
+### 🔍 **SEO & Analytics**
+- Comprehensive meta tags for social sharing
+- Google Analytics event tracking
+- Performance monitoring
+- Search engine optimization
+
+---
+
+## 📞 **Contact**
+
+**For Investment Inquiries:**
+- Visit our live website for complete investor presentation
+- Professional pitch deck and financial projections available
+- Team available for investor meetings and demos
+
+---
+
+## 📄 **License**
+
+This project represents proprietary technology developed for Monytix. All rights reserved.
+
+---
+
+**Built with ❤️ for the future of Indian fintech** 🇮🇳
+
+*Last updated: Auto-deployed from GitHub*
