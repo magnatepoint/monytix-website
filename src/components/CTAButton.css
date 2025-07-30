@@ -1,0 +1,198 @@
+.cta-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+.cta-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.cta-text {
+  white-space: nowrap;
+}
+
+/* Shimmer effect */
+.cta-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.cta-button:hover .cta-shimmer {
+  left: 100%;
+}
+
+/* Primary variant */
+.cta-primary {
+  background: linear-gradient(135deg, #d4af37 0%, #f4c430 100%);
+  color: #1a1a1a;
+  border: 2px solid transparent;
+}
+
+.cta-primary:hover {
+  background: linear-gradient(135deg, #f4c430 0%, #d4af37 100%);
+  transform: translateY(-2px);
+}
+
+/* Secondary variant */
+.cta-secondary {
+  background: transparent;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+}
+
+.cta-secondary:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #f4c430;
+  color: #f4c430;
+}
+
+/* Outline variant */
+.cta-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Ghost variant */
+.cta-ghost {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+  border: 2px solid transparent;
+}
+
+.cta-ghost:hover {
+  background: rgba(212, 175, 55, 0.2);
+  color: #f4c430;
+}
+
+/* Size variants */
+.cta-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 8px;
+}
+
+.cta-medium {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.cta-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  border-radius: 16px;
+}
+
+.cta-xl {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.25rem;
+  border-radius: 20px;
+}
+
+/* Special effects */
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.cta-button:hover::before {
+  opacity: 0.8;
+}
+
+/* Focus states */
+.cta-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .cta-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .cta-medium {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .cta-large {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+  }
+  
+  .cta-xl {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Animation for entrance */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-animate-in {
+  animation: slideInUp 0.6s ease-out forwards;
+} 

@@ -1,0 +1,267 @@
+.process-section {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.process-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #d4af37;
+}
+
+.process-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pyramid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pyramid {
+  position: relative;
+  width: 350px;
+  height: 320px;
+}
+
+.pyramid-level {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(68, 68, 68, 0.8);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pyramid-level:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.6);
+  transform: scale(1.05);
+}
+
+.level-1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.level-2 {
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 60px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+}
+
+.level-3 {
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 60px;
+  clip-path: polygon(16.67% 0%, 83.33% 0%, 100% 100%, 0% 100%);
+}
+
+.level-4 {
+  top: 195px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 60px;
+  clip-path: polygon(12.5% 0%, 87.5% 0%, 100% 100%, 0% 100%);
+}
+
+.level-5 {
+  top: 260px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 60px;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+.pyramid-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d4af37;
+  font-family: 'Playfair Display', serif;
+}
+
+.process-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  padding-left: 1rem;
+}
+
+.process-step {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.process-step:last-child {
+  border-bottom: none;
+}
+
+.step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+.step-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #b8b8b8;
+  margin: 0;
+}
+
+.process-summary {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #b8b8b8;
+}
+
+@media (max-width: 968px) {
+  .process-section {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+  
+  .process-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .pyramid {
+    width: 280px;
+    height: 260px;
+  }
+  
+  .level-1 {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .level-2 {
+    top: 52px;
+    width: 96px;
+    height: 48px;
+  }
+  
+  .level-3 {
+    top: 104px;
+    width: 144px;
+    height: 48px;
+  }
+  
+  .level-4 {
+    top: 156px;
+    width: 192px;
+    height: 48px;
+  }
+  
+  .level-5 {
+    top: 208px;
+    width: 240px;
+    height: 48px;
+  }
+  
+  .pyramid-number {
+    font-size: 1.4rem;
+  }
+  
+  .process-content {
+    gap: 1.5rem;
+    padding-left: 0;
+  }
+  
+  .step-title {
+    font-size: 1.2rem;
+  }
+  
+  .step-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-section {
+    padding: 30px 15px;
+  }
+  
+  .pyramid {
+    width: 240px;
+    height: 220px;
+  }
+  
+  .level-1 {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .level-2 {
+    top: 44px;
+    width: 80px;
+    height: 40px;
+  }
+  
+  .level-3 {
+    top: 88px;
+    width: 120px;
+    height: 40px;
+  }
+  
+  .level-4 {
+    top: 132px;
+    width: 160px;
+    height: 40px;
+  }
+  
+  .level-5 {
+    top: 176px;
+    width: 200px;
+    height: 40px;
+  }
+  
+  .pyramid-number {
+    font-size: 1.2rem;
+  }
+  
+  .process-step {
+    padding: 0.8rem 0;
+  }
+  
+  .step-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .process-content {
+    gap: 1.2rem;
+  }
+  
+  .process-summary {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+} 

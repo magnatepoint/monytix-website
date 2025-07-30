@@ -1,0 +1,301 @@
+.plans-section {
+  background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+  background-image: 
+    linear-gradient(135deg, #ff8a00 0%, #e52e71 50%, #ff8a00 100%);
+  position: relative;
+  padding: 80px 20px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.city-skyline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 5%;
+  z-index: 1;
+}
+
+.building {
+  background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  animation: buildingGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes buildingGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+  }
+}
+
+.building::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 60%;
+  height: 80%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.3) 20%,
+    transparent 40%,
+    rgba(212, 175, 55, 0.3) 60%,
+    transparent 80%,
+    rgba(212, 175, 55, 0.3) 100%
+  );
+  background-size: 20px 20px;
+}
+
+.building-1 {
+  width: 60px;
+  height: 200px;
+  animation-delay: 0s;
+}
+
+.building-2 {
+  width: 80px;
+  height: 280px;
+  animation-delay: 0.5s;
+}
+
+.building-3 {
+  width: 70px;
+  height: 320px;
+  animation-delay: 1s;
+}
+
+.building-4 {
+  width: 90px;
+  height: 400px;
+  animation-delay: 1.5s;
+}
+
+.building-5 {
+  width: 75px;
+  height: 350px;
+  animation-delay: 2s;
+}
+
+.building-6 {
+  width: 65px;
+  height: 250px;
+  animation-delay: 2.5s;
+}
+
+.building-7 {
+  width: 85px;
+  height: 300px;
+  animation-delay: 3s;
+}
+
+.building-8 {
+  width: 70px;
+  height: 220px;
+  animation-delay: 3.5s;
+}
+
+.section-content {
+  position: relative;
+  z-index: 2;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.plans-content {
+  max-width: 600px;
+}
+
+.plans-content .heading-primary {
+  color: #ffffff;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.plans-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.plan-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.plan-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.plan-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.plan-description strong {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.skyline-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.skyline-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 138, 0, 0.2) 0%,
+    rgba(229, 46, 113, 0.2) 100%
+  );
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 2rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.people-silhouettes {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  height: 100px;
+}
+
+.person {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50% 50% 0 0;
+  animation: personWalk 4s ease-in-out infinite;
+}
+
+.person-1 {
+  width: 20px;
+  height: 60px;
+  animation-delay: 0s;
+}
+
+.person-2 {
+  width: 25px;
+  height: 70px;
+  animation-delay: 0.8s;
+}
+
+.person-3 {
+  width: 22px;
+  height: 65px;
+  animation-delay: 1.6s;
+}
+
+.person-4 {
+  width: 18px;
+  height: 55px;
+  animation-delay: 2.4s;
+}
+
+.person-5 {
+  width: 24px;
+  height: 68px;
+  animation-delay: 3.2s;
+}
+
+@keyframes personWalk {
+  0%, 100% {
+    transform: translateX(0) scaleX(1);
+  }
+  50% {
+    transform: translateX(10px) scaleX(0.9);
+  }
+}
+
+@media (max-width: 968px) {
+  .plans-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .plans-content {
+    text-align: center;
+    max-width: none;
+  }
+  
+  .city-skyline {
+    height: 40%;
+  }
+  
+  .building {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 768px) {
+  .plans-section {
+    padding: 60px 15px;
+  }
+  
+  .plan-item {
+    padding: 1.5rem;
+  }
+  
+  .plan-description {
+    font-size: 1rem;
+  }
+  
+  .skyline-image {
+    height: 300px;
+  }
+  
+  .city-skyline {
+    height: 35%;
+  }
+  
+  .building {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 480px) {
+  .skyline-image {
+    height: 250px;
+  }
+  
+  .people-silhouettes {
+    gap: 0.5rem;
+  }
+  
+  .person {
+    transform: scale(0.8);
+  }
+} 
