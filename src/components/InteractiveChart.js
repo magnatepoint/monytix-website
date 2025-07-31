@@ -43,7 +43,7 @@ const InteractiveChart = () => {
     trackChartInteraction('prototype_dashboard', 'loaded');
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [categories.shopping.amount, categories.rent.amount, categories.entertainment.amount]);
 
   const handleCategoryClick = (category) => {
     const newSelection = selectedCategory === category ? null : category;

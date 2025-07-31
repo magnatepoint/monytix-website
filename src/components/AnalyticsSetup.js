@@ -180,7 +180,7 @@ export const useInViewAnalytics = (sectionName, options = {}) => {
   }, [sectionName, options]);
 };
 
-export default {
+const AnalyticsSetup = {
   initGA,
   useAnalytics,
   trackCTAClick,
@@ -191,4 +191,6 @@ export default {
   event,
   withSectionTracking,
   useInViewAnalytics,
-}; 
+};
+
+export default AnalyticsSetup; 
