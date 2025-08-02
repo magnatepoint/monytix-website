@@ -11,17 +11,6 @@ const PlansSection = () => {
 
   return (
     <section className="section plans-section" ref={ref}>
-      <div className="city-skyline">
-        <div className="building building-1"></div>
-        <div className="building building-2"></div>
-        <div className="building building-3"></div>
-        <div className="building building-4"></div>
-        <div className="building building-5"></div>
-        <div className="building building-6"></div>
-        <div className="building building-7"></div>
-        <div className="building building-8"></div>
-      </div>
-      
       <div className="section-content">
         <div className="plans-grid">
           <motion.div
@@ -71,19 +60,18 @@ const PlansSection = () => {
           </motion.div>
           
           <motion.div
-            className="skyline-image"
+            className="visual-element"
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            <div className="skyline-overlay">
-              <div className="people-silhouettes">
-                <div className="person person-1"></div>
-                <div className="person person-2"></div>
-                <div className="person person-3"></div>
-                <div className="person person-4"></div>
-                <div className="person person-5"></div>
+            <div className="visual-overlay">
+              <div className="geometric-pattern">
+                <div className="shape shape-1"></div>
+                <div className="shape shape-2"></div>
+                <div className="shape shape-3"></div>
               </div>
+              <div className="center-icon">💼</div>
             </div>
           </motion.div>
         </div>

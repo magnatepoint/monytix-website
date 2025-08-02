@@ -29,4 +29,4 @@ Files in this folder can be referenced directly in HTML or accessed via URL:
 
 - **Main Logo**: 400x200px or similar ratio
 - **Favicon**: 32x32px, 16x16px
-- **High DPI**: 2x versions (@2x suffix) 
+- **High DPI**: 2x versions (@2x suffix)
