@@ -111,9 +111,9 @@ const Hero: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Floating Elements */}
+            {/* Floating Elements - Hidden on mobile to prevent overlap */}
             <motion.div
-              className="absolute -top-4 -right-4 bg-gradient-neon text-white rounded-full p-3 shadow-lg z-20"
+              className="absolute -top-4 -right-4 bg-gradient-neon text-white rounded-full p-3 shadow-lg z-20 hidden md:block"
               animate={{ 
                 rotate: 360,
                 scale: [1, 1.1, 1]
@@ -127,7 +127,7 @@ const Hero: React.FC = () => {
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-6 -left-6 bg-gradient-sunset text-white rounded-2xl p-4 shadow-lg z-20"
+              className="absolute -bottom-6 -left-6 bg-gradient-sunset text-white rounded-2xl p-4 shadow-lg z-20 hidden md:block"
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
@@ -155,7 +155,7 @@ const Hero: React.FC = () => {
 
           {/* Main Headline */}
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-7xl font-bold font-display leading-tight text-startup mb-6"
+            className="text-4xl md:text-5xl lg:text-7xl font-bold font-display leading-tight text-startup mb-6 relative z-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -169,7 +169,7 @@ const Hero: React.FC = () => {
 
           {/* Subtitle */}
           <motion.p
-            className="text-lg md:text-xl text-chill leading-relaxed mb-8 max-w-lg"
+            className="text-lg md:text-xl text-chill leading-relaxed mb-8 max-w-lg relative z-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -242,8 +242,8 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Floating Call-outs */}
-          <div className="absolute top-20 right-10">
+          {/* Floating Call-outs - Hidden on mobile to prevent overlap */}
+          <div className="absolute top-20 right-10 hidden lg:block">
             <motion.div
               className="bg-gradient-electric text-white px-4 py-2 rounded-2xl shadow-lg text-sm font-medium"
               animate={{ rotate: [-2, 2, -2] }}
@@ -253,7 +253,7 @@ const Hero: React.FC = () => {
             </motion.div>
           </div>
 
-          <div className="absolute bottom-20 right-20">
+          <div className="absolute bottom-20 right-20 hidden lg:block">
             <motion.div
               className="bg-gradient-neon text-white px-4 py-2 rounded-2xl shadow-lg text-sm font-medium"
               animate={{ y: [-5, 15, -5] }}
