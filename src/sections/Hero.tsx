@@ -23,10 +23,10 @@ const Hero: React.FC = () => {
         <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-sunset-500/10 rounded-full blur-3xl animate-bounce-slow"></div>
       </div>
 
-      <div className="relative min-h-screen flex">
+      <div className="relative min-h-screen flex flex-col lg:flex-row">
         {/* LEFT SIDE - Interactive Dashboard */}
         <motion.div 
-          className="w-1/2 flex items-center justify-center p-12"
+          className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-8 lg:p-12"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
           <div className="relative w-full max-w-md">
             {/* Main Dashboard Card */}
             <motion.div
-              className="card-startup rounded-3xl p-8 shadow-2xl hover-float relative z-10"
+              className="card-startup rounded-3xl p-4 md:p-6 lg:p-8 shadow-2xl hover-float relative z-10"
               whileHover={{ scale: 1.02, rotateY: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -139,14 +139,14 @@ const Hero: React.FC = () => {
 
         {/* RIGHT SIDE - Content */}
         <motion.div 
-          className="w-1/2 flex flex-col justify-center p-12 relative"
+          className="w-full lg:w-1/2 flex flex-col justify-center p-4 md:p-8 lg:p-12 relative"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center space-x-2 card-startup rounded-full px-6 py-3 text-sm font-bold text-electric-400 glow-startup animate-startup-pulse mb-8 w-fit"
+            className="inline-flex items-center space-x-2 card-startup rounded-full px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm font-bold text-electric-400 glow-startup animate-startup-pulse mb-6 md:mb-8 w-fit"
             whileHover={{ scale: 1.05 }}
           >
             <Zap className="h-4 w-4 animate-bounce-slow" />
@@ -155,7 +155,7 @@ const Hero: React.FC = () => {
 
           {/* Main Headline */}
           <motion.h1
-            className="text-7xl font-bold font-display leading-tight text-startup mb-6"
+            className="text-4xl md:text-5xl lg:text-7xl font-bold font-display leading-tight text-startup mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -169,7 +169,7 @@ const Hero: React.FC = () => {
 
           {/* Subtitle */}
           <motion.p
-            className="text-xl text-chill leading-relaxed mb-8 max-w-lg"
+            className="text-lg md:text-xl text-chill leading-relaxed mb-8 max-w-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -180,21 +180,21 @@ const Hero: React.FC = () => {
 
           {/* Stats Row */}
           <motion.div
-            className="flex space-x-8 mb-8"
+            className="flex flex-wrap justify-center gap-4 md:gap-8 mb-6 md:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             <div className="text-center">
-                              <div className="text-3xl font-bold text-electric mb-1">₹16.6Cr+</div>
+                              <div className="text-2xl md:text-3xl font-bold text-electric mb-1">₹16.6Cr+</div>
               <div className="text-sm text-chill">Money Saved</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-rainbow mb-1">30sec</div>
+              <div className="text-2xl md:text-3xl font-bold text-rainbow mb-1">30sec</div>
               <div className="text-sm text-chill">Setup Time</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-electric mb-1">50K+</div>
+              <div className="text-2xl md:text-3xl font-bold text-electric mb-1">50K+</div>
               <div className="text-sm text-chill">Happy Users</div>
             </div>
           </motion.div>
@@ -206,18 +206,18 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.0 }}
           >
-            <form onSubmit={handleSubmit} className="flex w-full max-w-lg">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 sm:gap-0 w-full max-w-lg">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email... let's make magic! ✨"
-                className="flex-1 px-6 py-4 bg-midnight-900/50 backdrop-blur-sm border border-electric-500/30 rounded-l-2xl focus:outline-none focus:ring-2 focus:ring-electric-400 focus:border-electric-400 text-slate-50 placeholder-slate-400"
+                className="flex-1 px-4 md:px-6 py-3 md:py-4 bg-midnight-900/50 backdrop-blur-sm border border-electric-500/30 rounded-2xl sm:rounded-l-2xl sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-electric-400 focus:border-electric-400 text-slate-50 placeholder-slate-400"
                 required
               />
               <button
                 type="submit"
-                className="btn-startup rounded-l-none px-8 flex items-center space-x-2"
+                className="btn-startup rounded-2xl sm:rounded-l-none px-6 md:px-8 py-3 md:py-4 flex items-center justify-center space-x-2"
               >
                 <span>Let's Go!</span>
                 <ArrowRight className="h-4 w-4" />
