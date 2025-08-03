@@ -242,26 +242,7 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Floating Call-outs - Hidden on mobile to prevent overlap */}
-          <div className="absolute top-20 right-10 hidden lg:block">
-            <motion.div
-              className="bg-gradient-electric text-white px-4 py-2 rounded-2xl shadow-lg text-sm font-medium"
-              animate={{ rotate: [-2, 2, -2] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
-              💡 AI finds ₹25,000+ savings
-            </motion.div>
-          </div>
 
-          <div className="absolute bottom-20 right-20 hidden lg:block">
-            <motion.div
-              className="bg-gradient-neon text-white px-4 py-2 rounded-2xl shadow-lg text-sm font-medium"
-              animate={{ y: [-5, 15, -5] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            >
-              🎯 Goals hit 89% faster
-            </motion.div>
-          </div>
         </motion.div>
       </div>
     </section>
