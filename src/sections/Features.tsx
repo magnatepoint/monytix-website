@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { features } from '../data/features.ts';
 import { Feature } from '../types/index';
 import * as Icons from 'lucide-react';
-import { Search, Filter, Grid, List, Sparkles, ArrowRight, Star } from 'lucide-react';
+import { Search, Grid, List, Sparkles, ArrowRight } from 'lucide-react';
 
 const Features: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -12,7 +12,6 @@ const Features: React.FC = () => {
 
   // Get actual categories from the data
   const categories = useMemo(() => {
-    const uniqueCategories = [...new Set(features.map(f => f.category))];
     return [
       { id: 'all', name: 'All Features', icon: Grid, count: features.length },
       { id: 'core', name: 'Core Tools', icon: Sparkles, count: features.filter(f => f.category === 'core').length },

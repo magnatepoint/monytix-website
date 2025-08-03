@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, TrendingUp, Target, Zap, DollarSign, PieChart, ArrowRight, Sparkles } from 'lucide-react';
+import { Calculator, TrendingUp, Target, DollarSign, PieChart, ArrowRight, Sparkles } from 'lucide-react';
 
 const InteractiveDemo: React.FC = () => {
   const [activeDemo, setActiveDemo] = useState('roi');

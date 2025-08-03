@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Play, ArrowRight, TrendingUp, Shield, Zap, Users, DollarSign, Target, BarChart3, Sparkles } from 'lucide-react';
 
