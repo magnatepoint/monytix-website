@@ -365,7 +365,7 @@ const Features: React.FC = () => {
               </h3>
               
               <p className="text-chill mb-8 max-w-2xl mx-auto text-lg">
-                Join 50K+ people who went from "Where did my money go?" to "I'm basically a financial genius!" 💪
+                Join people who went from "Where did my money go?" to "I'm basically a financial genius!" 💪
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

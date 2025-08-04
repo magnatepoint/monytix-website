@@ -38,12 +38,7 @@ const Security: React.FC = () => {
     }
   ];
 
-  const trustIndicators = [
-    { metric: '99.9%', label: 'Uptime SLA', icon: Zap, color: 'text-electric' },
-    { metric: '50K+', label: 'Trusted Users', icon: Users, color: 'text-neon' },
-    { metric: '256-bit', label: 'Encryption', icon: Lock, color: 'text-sunset' },
-    { metric: 'SOC 2', label: 'Compliance', icon: Award, color: 'text-purple-400' }
-  ];
+
 
   const certifications = [
     { name: 'SOC 2 Type II', verified: true },
@@ -81,38 +76,7 @@ const Security: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Trust Indicators */}
-        <motion.div
-          className="grid md:grid-cols-4 gap-6 mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          {trustIndicators.map((indicator, index) => {
-            const IconComponent = indicator.icon;
-            return (
-              <motion.div
-                key={indicator.label}
-                className="card-startup rounded-2xl p-6 text-center hover-float group"
-                whileHover={{ scale: 1.05 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="bg-gradient-electric p-3 rounded-xl w-fit mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <IconComponent className="h-6 w-6 text-white" />
-                </div>
-                <div className={`text-3xl font-bold ${indicator.color} mb-2`}>
-                  {indicator.metric}
-                </div>
-                <div className="text-sm text-chill">
-                  {indicator.label}
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+
 
         {/* Security Features Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
