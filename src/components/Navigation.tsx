@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Grid3X3, Sparkles, Shield, Users, Mail, ArrowUp } from 'lucide-react';
-import MonytixLogo from './MonytixLogo.tsx';
+import faviconImage from '../assets/monytix_favicon.png';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -89,7 +89,12 @@ const Navigation: React.FC = () => {
                   border: '1px solid rgba(255,255,255,0.1)'
                 }}
               >
-                <MonytixLogo size="md" />
+                <img 
+                  src={faviconImage} 
+                  alt="MONYTIX Logo" 
+                  className="h-10 w-10 object-contain" 
+                  style={{ filter: 'brightness(1.1) contrast(1.1)' }}
+                />
               </motion.div>
               <div className="flex flex-col">
                 <motion.span 

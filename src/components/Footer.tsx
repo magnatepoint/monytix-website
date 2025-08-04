@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github, Sparkles, ArrowRight, Heart } from 'lucide-react';
-import MonytixLogo from './MonytixLogo.tsx';
+import faviconImage from '../assets/monytix_favicon.png';
 
 const Footer: React.FC = () => {
   const footerLinks = {
@@ -118,7 +118,12 @@ const Footer: React.FC = () => {
                       border: '1px solid rgba(255,255,255,0.1)'
                     }}
                   >
-                    <MonytixLogo size="lg" />
+                    <img 
+                      src={faviconImage} 
+                      alt="MONYTIX Logo" 
+                      className="h-12 w-12 object-contain" 
+                      style={{ filter: 'brightness(1.1) contrast(1.1)' }}
+                    />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-startup">MONYTIX</h3>
