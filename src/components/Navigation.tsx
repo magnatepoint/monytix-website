@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Grid3X3, Sparkles, Shield, Users, Mail, ArrowUp } from 'lucide-react';
-import logoImage from '../assets/logo.png';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,21 +74,23 @@ const Navigation: React.FC = () => {
               whileHover={{ scale: 1.05 }}
             >
               <motion.div 
-                className="bg-gradient-electric p-2 rounded-xl"
+                className="bg-black/20 backdrop-blur-md border border-white/10 p-3 rounded-xl shadow-2xl"
                 animate={{ 
                   boxShadow: [
-                    '0 0 0 0 rgba(245, 158, 11, 0.4)',
-                    '0 0 0 20px rgba(245, 158, 11, 0)',
+                    '0 0 0 0 rgba(245, 158, 11, 0.3)',
+                    '0 0 0 15px rgba(245, 158, 11, 0)',
                   ]
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
+                style={{
+                  background: 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(30,30,30,0.6) 100%)',
+                  backdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(255,255,255,0.1)'
+                }}
               >
-                <img 
-                  src={logoImage} 
-                  alt="MONYTIX Logo" 
-                  className="h-8 w-8 object-contain rounded-lg" 
-                  style={{ filter: 'brightness(1.1) contrast(1.2)' }}
-                />
+                <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-yellow-400 via-orange-500 to-blue-500 rounded-lg shadow-lg">
+                  <span className="text-white font-bold text-lg">M</span>
+                </div>
               </motion.div>
               <div className="flex flex-col">
                 <motion.span 
