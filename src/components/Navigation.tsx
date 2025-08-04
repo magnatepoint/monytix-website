@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Grid3X3, Sparkles, Shield, Users, Mail, ArrowUp } from 'lucide-react';
+import logoImage from '../assets/logo.png';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,7 +84,12 @@ const Navigation: React.FC = () => {
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <img src="/monytix_logo.png" alt="MONYTIX Logo" className="h-10 w-10" />
+                <img 
+                  src={logoImage} 
+                  alt="MONYTIX Logo" 
+                  className="h-8 w-8 object-contain rounded-lg" 
+                  style={{ filter: 'brightness(1.1) contrast(1.2)' }}
+                />
               </motion.div>
               <div className="flex flex-col">
                 <motion.span 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github, Sparkles, ArrowRight, Heart } from 'lucide-react';
+import logoImage from '../assets/logo.png';
 
 const Footer: React.FC = () => {
   const footerLinks = {
@@ -110,7 +111,12 @@ const Footer: React.FC = () => {
                 {/* Logo */}
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="bg-gradient-electric p-3 rounded-2xl">
-                    <img src="/monytix_logo.png" alt="MONYTIX Logo" className="h-10 w-10" />
+                    <img 
+                                              src={logoImage} 
+                      alt="MONYTIX Logo" 
+                      className="h-10 w-10 object-contain rounded-lg" 
+                      style={{ filter: 'brightness(1.1) contrast(1.2)' }}
+                    />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-startup">MONYTIX</h3>
