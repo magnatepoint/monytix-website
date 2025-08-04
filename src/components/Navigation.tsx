@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Zap, Home, Grid3X3, Sparkles, Shield, Users, Mail, ArrowUp } from 'lucide-react';
+import { Menu, X, Home, Grid3X3, Sparkles, Shield, Users, Mail, ArrowUp } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,13 +77,13 @@ const Navigation: React.FC = () => {
                 className="bg-gradient-electric p-2 rounded-xl"
                 animate={{ 
                   boxShadow: [
-                    '0 0 0 0 rgba(6, 182, 212, 0.4)',
-                    '0 0 0 20px rgba(6, 182, 212, 0)',
+                    '0 0 0 0 rgba(245, 158, 11, 0.4)',
+                    '0 0 0 20px rgba(245, 158, 11, 0)',
                   ]
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <Zap className="h-6 w-6 text-white" />
+                <img src="/monytix_logo.png" alt="MONYTIX Logo" className="h-10 w-10" />
               </motion.div>
               <div className="flex flex-col">
                 <motion.span 
@@ -92,7 +92,7 @@ const Navigation: React.FC = () => {
                 >
                   MONYTIX
                 </motion.span>
-                <span className="text-xs text-chill -mt-1">powered by MOLYTIX</span>
+                <span className="text-xs text-chill -mt-1">powered by MOLYTIX AI ENGINE</span>
               </div>
             </motion.div>
 

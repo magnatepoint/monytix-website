@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
                 {/* Logo */}
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="bg-gradient-electric p-3 rounded-2xl">
-                    <Zap className="h-8 w-8 text-white" />
+                    <img src="/monytix_logo.png" alt="MONYTIX Logo" className="h-10 w-10" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-startup">MONYTIX</h3>
