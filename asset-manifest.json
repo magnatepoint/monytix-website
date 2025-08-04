@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/monytix-website/static/css/main.006a4ea1.css",
+    "main.js": "/monytix-website/static/js/main.63422e92.js",
+    "static/js/453.b60f5a38.chunk.js": "/monytix-website/static/js/453.b60f5a38.chunk.js",
+    "index.html": "/monytix-website/index.html",
+    "main.006a4ea1.css.map": "/monytix-website/static/css/main.006a4ea1.css.map",
+    "main.63422e92.js.map": "/monytix-website/static/js/main.63422e92.js.map",
+    "453.b60f5a38.chunk.js.map": "/monytix-website/static/js/453.b60f5a38.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.006a4ea1.css",
+    "static/js/main.63422e92.js"
+  ]
+}
