@@ -5,36 +5,48 @@ import { Users, Target, Heart, Zap, Award, TrendingUp, Shield, ArrowRight, Spark
 const About: React.FC = () => {
   const team = [
     {
-      name: 'Alex Chen',
+      name: 'Sandeep Malla',
       role: 'CEO & Co-Founder',
-      bio: 'Former Goldman Sachs VP with 10+ years in fintech. Passionate about democratizing financial intelligence.',
       image: '👨‍💼',
       linkedin: '#',
       twitter: '#',
       gradient: 'bg-gradient-electric'
     },
     {
-      name: 'Sarah Johnson',
-      role: 'CTO & Co-Founder',
-      bio: 'Ex-Google AI researcher. Led ML teams at Scale AI. Building the future of financial AI.',
+      name: 'Santosh Malla',
+      role: 'Co-Founder',
       image: '👩‍💻',
       linkedin: '#',
       twitter: '#',
       gradient: 'bg-gradient-neon'
     },
     {
-      name: 'Marcus Rodriguez',
-      role: 'Head of Product',
-      bio: 'Former Mint product lead. Design thinking meets financial wellness to create delightful experiences.',
+      name: 'Bhuvanesh Kumar Jani',
+      role: 'Financial Consultant',
       image: '👨‍🎨',
       linkedin: '#',
       twitter: '#',
       gradient: 'bg-gradient-sunset'
     },
     {
-      name: 'Dr. Emily Watson',
-      role: 'Head of AI Research',
-      bio: 'PhD in Machine Learning from MIT. Published researcher in algorithmic transparency and ethical AI.',
+      name: 'Aarvind Dora',
+      role: 'Banking Consultant',
+      image: '👩‍🔬',
+      linkedin: '#',
+      twitter: '#',
+      gradient: 'bg-gradient-purple'
+    },
+    {
+      name: 'Sunil Reddy',
+      role: 'UI/UX Designer',
+      image: '👩‍🔬',
+      linkedin: '#',
+      twitter: '#',
+      gradient: 'bg-gradient-purple'
+    },
+    {
+      name: 'Kiran Kumar',
+      role: 'Research Analyst',
       image: '👩‍🔬',
       linkedin: '#',
       twitter: '#',
@@ -290,7 +302,6 @@ const About: React.FC = () => {
                 
                 <h4 className="font-bold text-startup mb-1">{member.name}</h4>
                 <div className="text-sm text-electric font-medium mb-3">{member.role}</div>
-                <p className="text-xs text-chill leading-relaxed mb-4">{member.bio}</p>
                 
                 <div className="flex justify-center space-x-3">
                   <a href={member.linkedin} className="text-chill hover:text-electric transition-colors">
