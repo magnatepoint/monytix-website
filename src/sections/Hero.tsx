@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Play, ArrowRight, TrendingUp, Shield, Zap, Users, DollarSign, Target, BarChart3, Sparkles } from 'lucide-react';
+import { TrendingUp, Zap, DollarSign, Target, BarChart3, Sparkles } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const [email, setEmail] = useState('');
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Email submitted:', email);
-    setEmail('');
-  };
 
   return (
     <section id="home" className="min-h-screen bg-startup relative overflow-hidden">
@@ -179,64 +172,12 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <div className="text-center">
-                              <div className="text-2xl md:text-3xl font-bold text-electric mb-1">₹16.6Cr+</div>
-              <div className="text-sm text-chill">Money Saved</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-rainbow mb-1">30sec</div>
-              <div className="text-sm text-chill">Setup Time</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-electric mb-1">50K+</div>
-              <div className="text-sm text-chill">Happy Users</div>
-            </div>
+
+
+
+
+
           </motion.div>
-
-          {/* CTA Section */}
-          <motion.div
-            className="flex flex-col space-y-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-          >
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 sm:gap-0 w-full max-w-lg">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email... let's make magic! ✨"
-                className="flex-1 px-4 md:px-6 py-3 md:py-4 bg-midnight-900/50 backdrop-blur-sm border border-electric-500/30 rounded-2xl sm:rounded-l-2xl sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-electric-400 focus:border-electric-400 text-slate-50 placeholder-slate-400"
-                required
-              />
-              <button
-                type="submit"
-                className="btn-startup rounded-2xl sm:rounded-l-none px-6 md:px-8 py-3 md:py-4 flex items-center justify-center space-x-2"
-              >
-                <span>Let's Go!</span>
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </form>
-            
-            <div className="flex items-center space-x-4">
-              <button className="btn-ghost-startup flex items-center space-x-3 wiggle-on-hover">
-                <Play className="h-5 w-5" />
-                <span>See Magic ✨</span>
-              </button>
-              <div className="flex items-center space-x-6 text-sm text-chill">
-                <div className="flex items-center space-x-2">
-                  <Shield className="h-4 w-4 text-electric-500" />
-                  <span>Fort Knox Secure</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Users className="h-4 w-4 text-electric-500" />
-                  <span>50K+ Users</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-
         </motion.div>
       </div>
     </section>

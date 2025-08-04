@@ -42,8 +42,8 @@ const Footer: React.FC = () => {
 
   const contactInfo = [
     { icon: Mail, text: 'hello@monytix.com', href: 'mailto:hello@monytix.com' },
-    { icon: Phone, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-    { icon: MapPin, text: 'San Francisco, CA', href: '#' }
+    { icon: Phone, text: '+91 9603113333', href: 'tel:+919603113333' },
+    { icon: MapPin, text: 'Hyderabad, India', href: '#' }
   ];
 
   return (
