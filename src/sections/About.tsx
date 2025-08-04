@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Target, Heart, Zap, Award, TrendingUp, Shield, ArrowRight, Sparkles, Building, Globe, Rocket } from 'lucide-react';
+import { Users, Target, Heart, Zap, Award, TrendingUp, Shield, ArrowRight, Sparkles, Building, Globe, Rocket, Brain } from 'lucide-react';
 
 const About: React.FC = () => {
   const team = [
@@ -85,18 +85,13 @@ const About: React.FC = () => {
     }
   ];
 
-  const metrics = [
-    { value: '50K+', label: 'Active Users', icon: Users, color: 'text-electric' },
-    { value: '₹20.7Cr+', label: 'Money Saved', icon: TrendingUp, color: 'text-neon' },
-    { value: '99.9%', label: 'Uptime', icon: Zap, color: 'text-sunset' },
-    { value: '4.9/5', label: 'User Rating', icon: Award, color: 'text-purple-400' }
-  ];
+  
 
   const milestones = [
-    { year: '2023', event: 'Founded MONYTIX', description: 'Started with a vision to democratize financial AI', icon: Rocket },
-    { year: '2023', event: 'Seed Funding', description: 'Raised ₹16.6Cr to build our AI engine', icon: TrendingUp },
-    { year: '2024', event: 'Beta Launch', description: 'Launched with 1,000 beta users', icon: Users },
-    { year: '2024', event: 'Series A', description: 'Expanded team and accelerated growth', icon: Building }
+    { year: '2025', event: 'Founded MONYTIX', icon: Rocket },
+    { year: '2025', event: 'Seed Funding',  icon: TrendingUp },
+    { year: '2026', event: 'AI Engine Development', icon: Brain },
+    { year: '2026', event: 'Series A', icon: Building }
   ];
 
   return (
@@ -127,38 +122,7 @@ const About: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Metrics */}
-        <motion.div
-          className="grid md:grid-cols-4 gap-6 mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          {metrics.map((metric, index) => {
-            const IconComponent = metric.icon;
-            return (
-              <motion.div
-                key={metric.label}
-                className="card-startup rounded-2xl p-6 text-center hover-float group"
-                whileHover={{ scale: 1.05 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="bg-gradient-electric p-3 rounded-xl w-fit mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <IconComponent className="h-6 w-6 text-white" />
-                </div>
-                <div className={`text-3xl font-bold ${metric.color} mb-2`}>
-                  {metric.value}
-                </div>
-                <div className="text-sm text-chill">
-                  {metric.label}
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+
 
         {/* Mission Statement */}
         <motion.div
@@ -356,7 +320,7 @@ const About: React.FC = () => {
                       <div className="card-startup rounded-2xl p-6 hover-float">
                         <div className="text-electric font-bold text-lg mb-2">{milestone.year}</div>
                         <h4 className="font-bold text-startup mb-2">{milestone.event}</h4>
-                        <p className="text-chill text-sm">{milestone.description}</p>
+
                       </div>
                     </div>
 
