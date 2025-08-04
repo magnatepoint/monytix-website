@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Target, Heart, Zap, Award, TrendingUp, Shield, ArrowRight, Sparkles, Building, Globe, Rocket, Brain } from 'lucide-react';
+import { Users, Target, Heart, Zap, TrendingUp, Shield, Sparkles, Building, Globe, Rocket, Brain } from 'lucide-react';
 
 const About: React.FC = () => {
   const team = [
@@ -88,10 +88,10 @@ const About: React.FC = () => {
   
 
   const milestones = [
-    { year: '2025', event: 'Founded MONYTIX', icon: Rocket },
+    { year: '2024', event: 'Founded MONYTIX', icon: Rocket },
     { year: '2025', event: 'Seed Funding',  icon: TrendingUp },
-    { year: '2026', event: 'AI Engine Development', icon: Brain },
-    { year: '2026', event: 'Series A', icon: Building }
+    { year: '2026', event: 'Series A', icon: Building },
+    { year: '2026', event: 'AI Engine Development', icon: Brain }
   ];
 
   return (
@@ -361,14 +361,7 @@ const About: React.FC = () => {
               Join thousands who've already transformed their financial future.
             </p>
 
-            <motion.button
-              className="btn-startup inline-flex items-center space-x-2 group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span>Start Your Financial Journey</span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+
           </div>
         </motion.div>
       </div>
