@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Grid3X3, Sparkles, Shield, Users, Mail, ArrowUp } from 'lucide-react';
-import MonytixLogo from './MonytixLogo';
+import MonytixLogo from './MonytixLogo.tsx';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

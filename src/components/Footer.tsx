@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github, Sparkles, ArrowRight, Heart } from 'lucide-react';
-import MonytixLogo from './MonytixLogo';
+import MonytixLogo from './MonytixLogo.tsx';
 
 const Footer: React.FC = () => {
   const footerLinks = {
