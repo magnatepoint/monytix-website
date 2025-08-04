@@ -145,13 +145,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {/* Badge */}
-          <motion.div
-            className="inline-flex items-center space-x-2 card-startup rounded-full px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm font-bold text-electric-400 glow-startup animate-startup-pulse mb-6 md:mb-8 w-fit"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Zap className="h-4 w-4 animate-bounce-slow" />
-            <span>AI That Actually Works 🔥</span>
-          </motion.div>
+
 
           {/* Main Headline */}
           <motion.h1

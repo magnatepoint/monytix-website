@@ -368,30 +368,7 @@ const Features: React.FC = () => {
                 Join people who went from "Where did my money go?" to "I'm basically a financial genius!" 💪
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.button
-                  className="btn-startup px-8 py-4 text-lg inline-flex items-center space-x-2 group"
-                  whileHover={{ 
-                    scale: 1.02,
-                    transition: { duration: 0.15 }
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span>Start Free Trial</span>
-                  <Sparkles className="h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
-                </motion.button>
-                <motion.button
-                  className="btn-ghost-startup px-8 py-4 text-lg inline-flex items-center space-x-2 group"
-                  whileHover={{ 
-                    scale: 1.02,
-                    transition: { duration: 0.15 }
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span>Book a Demo</span>
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
-                </motion.button>
-              </div>
+
             </div>
           </div>
         </motion.div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Lock, Eye, Users, CheckCircle, Award, Zap, Star, Sparkles } from 'lucide-react';
+import { Shield, Lock, Eye, Users, CheckCircle, Star, Sparkles } from 'lucide-react';
 
 const Security: React.FC = () => {
   const securityFeatures = [
