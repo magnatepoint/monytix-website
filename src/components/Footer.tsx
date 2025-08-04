@@ -193,7 +193,7 @@ const Footer: React.FC = () => {
               <p className="text-chill text-xs mt-1 flex items-center justify-center md:justify-start space-x-1">
                 <span>Made with</span>
                 <Heart className="h-3 w-3 text-electric fill-current" />
-                <span>in San Francisco</span>
+                <span>in Hyderabad, India</span>
               </p>
             </motion.div>
 
