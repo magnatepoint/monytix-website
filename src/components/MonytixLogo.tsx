@@ -20,47 +20,42 @@ const MonytixLogo: React.FC<MonytixLogoProps> = ({ size = 'md', className = '' }
         className="w-full h-full"
         style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))' }}
       >
-        {/* Background circle */}
-        <circle cx="50" cy="50" r="48" fill="rgba(30,30,30,0.8)" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
+        {/* Outer ring */}
+        <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5"/>
         
-        {/* Colored segments - mimicking the original logo */}
+        {/* Colored segments - matching the favicon design */}
         <path 
-          d="M 50 2 A 48 48 0 0 1 85.86 25 L 50 50 Z" 
+          d="M 50 2 A 48 48 0 0 1 98 50 L 50 50 Z" 
           fill="#fbbf24" 
-          opacity="0.9"
+          opacity="1"
         />
         <path 
-          d="M 85.86 25 A 48 48 0 0 1 85.86 75 L 50 50 Z" 
-          fill="#60a5fa" 
-          opacity="0.9"
+          d="M 98 50 A 48 48 0 0 1 50 98 L 50 50 Z" 
+          fill="#ff6b35" 
+          opacity="1"
         />
         <path 
-          d="M 85.86 75 A 48 48 0 0 1 14.14 75 L 50 50 Z" 
-          fill="#fb7185" 
-          opacity="0.9"
+          d="M 50 98 A 48 48 0 0 1 2 50 L 50 50 Z" 
+          fill="#1e40af" 
+          opacity="1"
         />
         <path 
-          d="M 14.14 75 A 48 48 0 0 1 14.14 25 L 50 50 Z" 
-          fill="#34d399" 
-          opacity="0.9"
-        />
-        <path 
-          d="M 14.14 25 A 48 48 0 0 1 50 2 L 50 50 Z" 
-          fill="#f59e0b" 
-          opacity="0.9"
+          d="M 2 50 A 48 48 0 0 1 50 2 L 50 50 Z" 
+          fill="#38bdf8" 
+          opacity="1"
         />
         
-        {/* Center circle */}
-        <circle cx="50" cy="50" r="15" fill="rgba(0,0,0,0.7)" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
+        {/* Center circle - white background like the favicon */}
+        <circle cx="50" cy="50" r="22" fill="white" stroke="rgba(0,0,0,0.1)" strokeWidth="0.5"/>
         
         {/* M letter */}
         <text 
           x="50" 
           y="58" 
           textAnchor="middle" 
-          fontSize="18" 
+          fontSize="16" 
           fontWeight="bold" 
-          fill="white"
+          fill="#1e293b"
           fontFamily="system-ui, -apple-system, sans-serif"
         >
           M
