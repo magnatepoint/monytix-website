@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Grid3X3, Sparkles, Shield, Users, Mail, ArrowUp } from 'lucide-react';
+import MonytixLogo from './MonytixLogo';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -88,9 +89,7 @@ const Navigation: React.FC = () => {
                   border: '1px solid rgba(255,255,255,0.1)'
                 }}
               >
-                <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-yellow-400 via-orange-500 to-blue-500 rounded-lg shadow-lg">
-                  <span className="text-white font-bold text-lg">M</span>
-                </div>
+                <MonytixLogo size="md" />
               </motion.div>
               <div className="flex flex-col">
                 <motion.span 

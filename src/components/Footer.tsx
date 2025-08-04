@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Twitter, Linkedin, Github, Sparkles, ArrowRight, Heart } from 'lucide-react';
+import MonytixLogo from './MonytixLogo';
 
 const Footer: React.FC = () => {
   const footerLinks = {
@@ -117,9 +118,7 @@ const Footer: React.FC = () => {
                       border: '1px solid rgba(255,255,255,0.1)'
                     }}
                   >
-                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-yellow-400 via-orange-500 to-blue-500 rounded-lg shadow-lg">
-                      <span className="text-white font-bold text-xl">M</span>
-                    </div>
+                    <MonytixLogo size="lg" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-startup">MONYTIX</h3>
