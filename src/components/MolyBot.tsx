@@ -96,12 +96,12 @@ const MolyBot: React.FC = () => {
     <>
       {/* Chat Button */}
       <motion.button
-        className="fixed bottom-6 right-6 bg-gradient-to-r from-primary-600 to-accent-500 text-white p-4 rounded-full shadow-2xl z-50 hover:shadow-3xl transition-shadow"
+        className="fixed bottom-6 right-6 bg-gradient-to-r from-electric-600 to-gold-500 text-white p-4 rounded-full shadow-2xl z-50 hover:shadow-3xl transition-shadow"
         onClick={() => setIsOpen(true)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         animate={!isOpen ? { 
-          boxShadow: ['0 10px 25px rgba(59, 130, 246, 0.3)', '0 10px 35px rgba(59, 130, 246, 0.5)', '0 10px 25px rgba(59, 130, 246, 0.3)']
+          boxShadow: ['0 10px 25px rgba(245, 158, 11, 0.3)', '0 10px 35px rgba(245, 158, 11, 0.5)', '0 10px 25px rgba(245, 158, 11, 0.3)']
         } : {}}
         transition={{ duration: 2, repeat: Infinity }}
       >
@@ -119,7 +119,7 @@ const MolyBot: React.FC = () => {
             transition={{ duration: 0.3 }}
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-primary-600 to-accent-500 text-white p-4 rounded-t-2xl flex items-center justify-between">
+            <div className="bg-gradient-to-r from-electric-600 to-gold-500 text-white p-4 rounded-t-2xl flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="bg-white/20 p-2 rounded-full">
                   <Bot className="h-5 w-5" />
@@ -152,7 +152,7 @@ const MolyBot: React.FC = () => {
                   }`}>
                     <div className={`p-2 rounded-full ${
                       message.sender === 'user' 
-                        ? 'bg-primary-100 text-primary-600' 
+                        ? 'bg-electric-100 text-electric-600' 
                         : 'bg-gray-100 text-gray-600'
                     }`}>
                       {message.sender === 'user' ? (
@@ -163,7 +163,7 @@ const MolyBot: React.FC = () => {
                     </div>
                     <div className={`p-3 rounded-lg ${
                       message.sender === 'user'
-                        ? 'bg-primary-600 text-white'
+                        ? 'bg-electric-600 text-white'
                         : 'bg-gray-100 text-gray-800'
                     }`}>
                       <p className="text-sm leading-relaxed">{message.text}</p>
@@ -221,12 +221,12 @@ const MolyBot: React.FC = () => {
                   onChange={(e) => setInputText(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                   placeholder="Ask me anything about MONYTIX..."
-                  className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-electric-500 focus:border-transparent"
                 />
                 <button
                   onClick={handleSendMessage}
                   disabled={!inputText.trim()}
-                  className="bg-primary-600 hover:bg-primary-700 disabled:bg-gray-300 text-white p-2 rounded-lg transition-colors"
+                  className="bg-electric-600 hover:bg-electric-700 disabled:bg-gray-300 text-white p-2 rounded-lg transition-colors"
                 >
                   <Send className="h-4 w-4" />
                 </button>
