@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { features } from '../data/features.ts';
 import { Feature } from '../types/index';
 import * as Icons from 'lucide-react';
-import { Search, Grid, List, Sparkles, ArrowRight } from 'lucide-react';
+import { Search, Grid, List, Sparkles } from 'lucide-react';
 
 const Features: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -62,8 +62,6 @@ const Features: React.FC = () => {
   }> = ({ feature, index, layout, viewMode }) => {
     const IconComponent = Icons[feature.icon as keyof typeof Icons] as React.ComponentType<any>;
     const isLarge = viewMode === 'bento' && (layout.includes('col-span-2') || layout.includes('row-span-2'));
-    const isTall = viewMode === 'bento' && layout.includes('row-span-2');
-    const isWide = viewMode === 'bento' && layout.includes('col-span-2') && !layout.includes('row-span-2');
     
     // Map feature colors to gradient classes
     const getGradientClass = (colorString: string) => {
