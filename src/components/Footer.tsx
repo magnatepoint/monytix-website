@@ -56,47 +56,6 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Newsletter Section */}
-        <motion.div
-          className="py-16 border-b border-midnight-700"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="card-startup rounded-3xl p-12 text-center">
-            <div className="bg-gradient-gold p-4 rounded-2xl w-fit mx-auto mb-6">
-              <Sparkles className="h-8 w-8 text-white" />
-            </div>
-            
-            <h3 className="text-3xl font-bold text-startup mb-4">
-                          Stay in the
-            <span className="text-gold"> Loop</span>
-            </h3>
-            
-            <p className="text-lg text-chill mb-8 max-w-2xl mx-auto">
-              Get the latest updates on new features, financial tips, and exclusive insights 
-              delivered straight to your inbox.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-midnight-800 border border-midnight-600 rounded-xl text-startup placeholder-chill focus:outline-none focus:ring-2 focus:ring-electric-500 focus:border-transparent transition-all"
-              />
-              <motion.button
-                className="btn-startup px-6 py-3 flex items-center justify-center space-x-2"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>Subscribe</span>
-                <ArrowRight className="h-4 w-4" />
-              </motion.button>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Main Footer Content */}
         <div className="py-16">
           <div className="grid lg:grid-cols-6 gap-8">

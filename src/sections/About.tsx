@@ -15,7 +15,7 @@ const About: React.FC = () => {
     {
       name: 'Santosh Malla',
       role: 'Co-Founder',
-      image: '👩‍💻',
+      image: '👨‍💻',
       linkedin: '#',
       twitter: '#',
       gradient: 'bg-gradient-neon'
@@ -31,7 +31,7 @@ const About: React.FC = () => {
     {
       name: 'Aarvind Dora',
       role: 'Banking Consultant',
-      image: '👩‍🔬',
+      image: '👨‍🔬',
       linkedin: '#',
       twitter: '#',
       gradient: 'bg-gradient-purple'
@@ -39,7 +39,7 @@ const About: React.FC = () => {
     {
       name: 'Sunil Reddy',
       role: 'UI/UX Designer',
-      image: '👩‍🔬',
+      image: '👨‍🎨',
       linkedin: '#',
       twitter: '#',
       gradient: 'bg-gradient-purple'
@@ -47,7 +47,7 @@ const About: React.FC = () => {
     {
       name: 'Kiran Kumar',
       role: 'Research Analyst',
-      image: '👩‍🔬',
+      image: '👨‍💼',
       linkedin: '#',
       twitter: '#',
       gradient: 'bg-gradient-purple'

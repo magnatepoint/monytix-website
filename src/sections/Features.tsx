@@ -8,7 +8,7 @@ import { Search, Grid, List, Sparkles, ArrowRight } from 'lucide-react';
 const Features: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
-  const [viewMode, setViewMode] = useState<'bento' | 'grid'>('bento');
+  const [viewMode, setViewMode] = useState<'bento' | 'grid'>('grid');
 
   // Get actual categories from the data
   const categories = useMemo(() => {
@@ -38,23 +38,23 @@ const Features: React.FC = () => {
     return filtered;
   }, [selectedCategory, searchTerm]);
 
-  // Dynamic Bento layouts - more varied and responsive
+  // Improved Bento layout with better consistency
   const getBentoLayout = (index: number, total: number) => {
+    // Create a more predictable pattern
     const patterns = [
-      'col-span-2 row-span-2', // Large featured
-      'col-span-1 row-span-2', // Tall
+      'col-span-2 row-span-2', // Large featured (every 4th item)
       'col-span-1 row-span-1', // Small
-      'col-span-2 row-span-1', // Wide
       'col-span-1 row-span-1', // Small
       'col-span-1 row-span-1', // Small
       'col-span-1 row-span-2', // Tall
+      'col-span-1 row-span-1', // Small
       'col-span-1 row-span-1', // Small
       'col-span-2 row-span-1', // Wide
     ];
     return patterns[index % patterns.length];
   };
 
-  const BentoFeatureCard: React.FC<{ 
+  const FeatureCard: React.FC<{ 
     feature: Feature; 
     index: number; 
     layout: string; 
@@ -62,10 +62,12 @@ const Features: React.FC = () => {
   }> = ({ feature, index, layout, viewMode }) => {
     const IconComponent = Icons[feature.icon as keyof typeof Icons] as React.ComponentType<any>;
     const isLarge = viewMode === 'bento' && (layout.includes('col-span-2') || layout.includes('row-span-2'));
+    const isTall = viewMode === 'bento' && layout.includes('row-span-2');
+    const isWide = viewMode === 'bento' && layout.includes('col-span-2') && !layout.includes('row-span-2');
     
     // Map feature colors to gradient classes
     const getGradientClass = (colorString: string) => {
-            if (colorString.includes('blue') || colorString.includes('indigo') || colorString.includes('gold')) return 'bg-gradient-electric';
+      if (colorString.includes('blue') || colorString.includes('indigo') || colorString.includes('gold')) return 'bg-gradient-electric';
       if (colorString.includes('green') || colorString.includes('emerald') || colorString.includes('teal')) return 'bg-gradient-neon';
       if (colorString.includes('orange') || colorString.includes('red') || colorString.includes('yellow') || colorString.includes('pink') || colorString.includes('rose')) return 'bg-gradient-gold';
       if (colorString.includes('purple') || colorString.includes('violet')) return 'bg-gradient-purple';
@@ -77,7 +79,7 @@ const Features: React.FC = () => {
 
     return (
       <motion.div
-        className={`${cardClass} feature-card rounded-3xl overflow-hidden group cursor-pointer relative`}
+        className={`${cardClass} feature-card rounded-3xl overflow-hidden group cursor-pointer relative h-full min-h-[280px]`}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
@@ -108,15 +110,15 @@ const Features: React.FC = () => {
           </div>
 
           {/* Title & Tagline */}
-          <div className="mb-4">
+          <div className="mb-4 flex-1">
             <h3 className={`font-bold text-startup mb-2 ${isLarge ? 'text-2xl' : 'text-lg'}`}>
               {feature.name}
             </h3>
-            <p className={`text-electric italic font-medium ${isLarge ? 'text-base' : 'text-sm'}`}>
+            <p className={`text-electric italic font-medium ${isLarge ? 'text-base' : 'text-sm'} mb-3`}>
               {feature.tagline}
             </p>
-            {isLarge && (
-              <p className="text-chill text-sm leading-relaxed mt-3">
+            {(isLarge || viewMode === 'grid') && (
+              <p className="text-chill text-sm leading-relaxed">
                 {feature.description}
               </p>
             )}
@@ -144,18 +146,11 @@ const Features: React.FC = () => {
 
           {/* Footer */}
           <div className="mt-auto">
-            {!isLarge && (
+            {!isLarge && viewMode === 'bento' && (
               <div className="text-xs text-chill mb-3 line-clamp-2">
                 {feature.description}
               </div>
             )}
-            
-            <button
-              className={`${isLarge ? 'btn-startup' : 'btn-ghost-startup'} ${isLarge ? 'py-3 px-6' : 'py-2 px-4'} text-sm w-full flex items-center justify-center space-x-2 feature-button`}
-            >
-              <span>{isLarge ? '✨ Explore' : 'Learn More'}</span>
-              <ArrowRight className="h-4 w-4 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200" />
-            </button>
           </div>
         </div>
 
@@ -299,7 +294,7 @@ const Features: React.FC = () => {
             key={`${selectedCategory}-${searchTerm}-${viewMode}`}
             className={
               viewMode === 'bento' 
-                ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-max gap-6 mb-16"
+                ? "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr gap-6 mb-16"
                 : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16"
             }
             initial={{ opacity: 0 }}
@@ -309,7 +304,7 @@ const Features: React.FC = () => {
           >
             {filteredFeatures.length > 0 ? (
               filteredFeatures.map((feature, index) => (
-                <BentoFeatureCard
+                <FeatureCard
                   key={feature.id}
                   feature={feature}
                   index={index}
@@ -367,8 +362,6 @@ const Features: React.FC = () => {
               <p className="text-chill mb-8 max-w-2xl mx-auto text-lg">
                 Join people who went from "Where did my money go?" to "I'm basically a financial genius!" 💪
               </p>
-              
-
             </div>
           </div>
         </motion.div>

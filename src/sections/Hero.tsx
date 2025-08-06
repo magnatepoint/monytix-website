@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
   return (
-    <section id="home" className="min-h-screen bg-startup relative overflow-hidden">
+    <section id="home" className="min-h-screen bg-startup relative overflow-hidden pt-20 md:pt-24">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-electric-500/10 rounded-full blur-3xl animate-float"></div>
@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
       <div className="relative min-h-screen flex flex-col lg:flex-row">
         {/* LEFT SIDE - Interactive Dashboard */}
         <motion.div 
-          className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-8 lg:p-12"
+          className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6 lg:p-8"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -28,12 +28,12 @@ const Hero: React.FC = () => {
           <div className="relative w-full max-w-md">
             {/* Main Dashboard Card */}
             <motion.div
-              className="card-startup rounded-3xl p-4 md:p-6 lg:p-8 shadow-2xl hover-float relative z-10"
+              className="card-startup rounded-3xl p-4 md:p-5 lg:p-6 shadow-2xl hover-float relative z-10"
               whileHover={{ scale: 1.02, rotateY: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               {/* Header */}
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-4">
                                   <div className="flex items-center space-x-3">
                   <div className="bg-gradient-gold p-2 rounded-xl animate-startup-pulse">
                     <Sparkles className="h-5 w-5 text-white" />
@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-2 gap-4 mb-4">
                 <motion.div 
                   className="bg-gradient-electric text-white rounded-2xl p-4 text-center"
                   whileHover={{ scale: 1.05 }}
@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Interactive Chart */}
-              <div className="bg-midnight-800/30 rounded-2xl p-4 mb-6">
+              <div className="bg-midnight-800/30 rounded-2xl p-4 mb-4">
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-sm text-chill">Weekly Spending</span>
                   <BarChart3 className="h-4 w-4 text-electric-400" />
@@ -132,7 +132,7 @@ const Hero: React.FC = () => {
 
         {/* RIGHT SIDE - Content */}
         <motion.div 
-          className="w-full lg:w-1/2 flex flex-col justify-center p-4 md:p-8 lg:p-12 relative"
+          className="w-full lg:w-1/2 flex flex-col justify-center p-4 md:p-6 lg:p-8 relative"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -142,7 +142,7 @@ const Hero: React.FC = () => {
 
           {/* Main Headline */}
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-7xl font-bold font-display leading-tight text-startup mb-6 relative z-10"
+            className="text-5xl md:text-6xl lg:text-8xl font-bold font-display leading-tight text-startup mb-4 relative z-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -156,7 +156,7 @@ const Hero: React.FC = () => {
 
           {/* Subtitle */}
           <motion.p
-            className="text-lg md:text-xl text-chill leading-relaxed mb-8 max-w-lg relative z-10"
+            className="text-xl md:text-2xl text-chill leading-relaxed mb-6 max-w-2xl relative z-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -167,7 +167,7 @@ const Hero: React.FC = () => {
 
           {/* Stats Row */}
           <motion.div
-            className="flex flex-wrap justify-center gap-4 md:gap-8 mb-6 md:mb-8"
+            className="flex flex-wrap justify-center gap-4 md:gap-8 mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
