@@ -190,53 +190,8 @@ const Hero: React.FC = () => {
             tracks spending, and gives you insights that make you go "wow, why didn't I know this before?"
           </motion.p>
 
-          {/* Stats Row */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-4 md:gap-8 mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            {/* Money Saved */}
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-electric mb-1">₹16.6Cr+</div>
-              <div className="text-sm text-chill">Money Saved</div>
-            </div>
-            {/* Setup Time */}
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-rainbow mb-1">30sec</div>
-              <div className="text-sm text-chill">Setup Time</div>
-            </div>
-            {/* Happy Users */}
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-electric mb-1">50K+</div>
-              <div className="text-sm text-chill">Happy Users</div>
-            </div>
-          </motion.div>
 
-          {/* CTA Section */}
-          <motion.div
-            className="flex flex-col space-y-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-          >
-            <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-2 sm:gap-0 w-full max-w-lg">
-              <input
-                type="email"
-                placeholder="Your email... let's make magic! ✨"
-                className="flex-1 px-4 md:px-6 py-3 md:py-4 bg-midnight-900/50 backdrop-blur-sm border border-electric-500/30 rounded-2xl sm:rounded-l-2xl sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-electric-400 focus:border-electric-400 text-slate-50 placeholder-slate-400"
-                required
-              />
-              <button
-                type="submit"
-                className="btn-startup rounded-2xl sm:rounded-l-none px-6 md:px-8 py-3 md:py-4 flex items-center justify-center space-x-2"
-              >
-                <span>Let's Go!</span>
-                <span>🚀</span>
-              </button>
-            </form>
-          </motion.div>
+
         </motion.div>
       </div>
     </section>
