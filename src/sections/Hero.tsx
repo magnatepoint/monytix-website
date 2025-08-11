@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
             >
               {/* Header */}
               <div className="flex items-center justify-between mb-4">
-                                  <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3">
                   <div className="bg-gradient-gold p-2 rounded-xl animate-startup-pulse">
                     <Sparkles className="h-5 w-5 text-white" />
                   </div>
@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
-                              <div className="text-lg font-bold">+₹2,03,000</div>
+              <div className="text-lg font-bold">+₹2,03,000</div>
               <div className="text-xs opacity-80">Saved this month</div>
             </motion.div>
           </div>
@@ -137,8 +137,33 @@ const Hero: React.FC = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {/* Badge */}
-
+          {/* Badges */}
+          <motion.div className="flex flex-wrap gap-3 mb-6">
+            <motion.div
+              className="inline-flex items-center space-x-1 card-startup rounded-full px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm font-bold text-gold glow-startup"
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.span 
+                className="text-2xl text-gold"
+                animate={{ 
+                  y: [-2, 2, -2],
+                  rotate: [0, 5, -5, 0]
+                }}
+                transition={{ 
+                  y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                  rotate: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                }}
+                style={{ 
+                  filter: 'brightness(1.5) contrast(1.5)',
+                  fontSize: '1.5rem',
+                  display: 'inline-block'
+                }}
+              >
+                🚀
+              </motion.span>
+              <span className="text-gold">Patent Pending</span>
+            </motion.div>
+          </motion.div>
 
           {/* Main Headline */}
           <motion.h1
@@ -172,11 +197,45 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
+            {/* Money Saved */}
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-electric mb-1">₹16.6Cr+</div>
+              <div className="text-sm text-chill">Money Saved</div>
+            </div>
+            {/* Setup Time */}
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-rainbow mb-1">30sec</div>
+              <div className="text-sm text-chill">Setup Time</div>
+            </div>
+            {/* Happy Users */}
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-electric mb-1">50K+</div>
+              <div className="text-sm text-chill">Happy Users</div>
+            </div>
+          </motion.div>
 
-
-
-
-
+          {/* CTA Section */}
+          <motion.div
+            className="flex flex-col space-y-4 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+          >
+            <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-2 sm:gap-0 w-full max-w-lg">
+              <input
+                type="email"
+                placeholder="Your email... let's make magic! ✨"
+                className="flex-1 px-4 md:px-6 py-3 md:py-4 bg-midnight-900/50 backdrop-blur-sm border border-electric-500/30 rounded-2xl sm:rounded-l-2xl sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-electric-400 focus:border-electric-400 text-slate-50 placeholder-slate-400"
+                required
+              />
+              <button
+                type="submit"
+                className="btn-startup rounded-2xl sm:rounded-l-none px-6 md:px-8 py-3 md:py-4 flex items-center justify-center space-x-2"
+              >
+                <span>Let's Go!</span>
+                <span>🚀</span>
+              </button>
+            </form>
           </motion.div>
         </motion.div>
       </div>
