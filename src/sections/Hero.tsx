@@ -17,6 +17,67 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative min-h-screen flex flex-col lg:flex-row">
+        {/* LEFT SIDE - Content */}
+        <motion.div 
+          className="w-full lg:w-1/2 flex flex-col justify-center p-4 md:p-6 lg:p-8 relative"
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          {/* Badges */}
+          <motion.div className="flex flex-wrap gap-3 mb-6">
+            <motion.div
+              className="inline-flex items-center space-x-1 card-startup rounded-full px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm font-bold text-gold glow-startup"
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.span 
+                className="text-2xl text-gold"
+                animate={{ 
+                  y: [-2, 2, -2],
+                  rotate: [0, 5, -5, 0]
+                }}
+                transition={{ 
+                  y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                  rotate: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                }}
+                style={{ 
+                  filter: 'brightness(1.5) contrast(1.5)',
+                  fontSize: '1.5rem',
+                  display: 'inline-block'
+                }}
+              >
+                🚀
+              </motion.span>
+              <span className="text-gold">Patent Pending</span>
+            </motion.div>
+          </motion.div>
+
+          {/* Main Headline */}
+          <motion.h1
+            className="text-5xl md:text-6xl lg:text-8xl font-bold font-display leading-tight text-startup mb-4 relative z-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            Your Money
+            <br />
+            <span className="text-gold wiggle-on-hover block">
+              Simplified
+            </span>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            className="text-xl md:text-2xl text-chill leading-relaxed mb-6 max-w-2xl relative z-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            🚀 Stop stressing about money! Our AI connects everything, 
+            tracks spending, and gives you insights that make you go "wow, why didn't I know this before?"
+          </motion.p>
+        </motion.div>
+
         {/* RIGHT SIDE - Interactive Dashboard */}
         <motion.div 
           className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6 lg:p-8"
@@ -58,7 +119,8 @@ const Hero: React.FC = () => {
                   className="bg-gradient-electric text-white rounded-2xl p-4 text-center"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="text-lg font-bold">₹6.8L</div>
+                  <div className="text-2xl font-bold mb-1">₹</div>
+                  <div className="text-lg font-bold">6.8L</div>
                   <div className="text-xs opacity-80">This Month</div>
                 </motion.div>
                 <motion.div 
