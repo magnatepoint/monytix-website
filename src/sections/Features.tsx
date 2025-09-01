@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { features } from '../data/features.ts';
 import { Feature } from '../types/index';
 import * as Icons from 'lucide-react';
-import { Search, Grid, List, Sparkles, Building2, User, Eye, BarChart3 } from 'lucide-react';
+import { Search, Grid, List, Sparkles, Building2, User } from 'lucide-react';
 
 const Features: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
