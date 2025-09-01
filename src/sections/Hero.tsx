@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { TrendingUp, Zap, DollarSign, Target, BarChart3, Sparkles } from 'lucide-react';
+import { TrendingUp, Zap, Target, BarChart3, Sparkles } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -17,10 +17,10 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative min-h-screen flex flex-col lg:flex-row">
-        {/* LEFT SIDE - Interactive Dashboard */}
+        {/* RIGHT SIDE - Interactive Dashboard */}
         <motion.div 
           className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6 lg:p-8"
-          initial={{ x: -100, opacity: 0 }}
+          initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           style={{ y, opacity }}
@@ -58,7 +58,6 @@ const Hero: React.FC = () => {
                   className="bg-gradient-electric text-white rounded-2xl p-4 text-center"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <DollarSign className="h-6 w-6 mx-auto mb-2" />
                   <div className="text-lg font-bold">₹6.8L</div>
                   <div className="text-xs opacity-80">This Month</div>
                 </motion.div>
@@ -130,10 +129,10 @@ const Hero: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* RIGHT SIDE - Content */}
+        {/* LEFT SIDE - Content */}
         <motion.div 
           className="w-full lg:w-1/2 flex flex-col justify-center p-4 md:p-6 lg:p-8 relative"
-          initial={{ x: 100, opacity: 0 }}
+          initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
