@@ -88,6 +88,12 @@ const Hero: React.FC = () => {
               className="btn-startup px-8 py-4 text-lg font-semibold"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                document.getElementById('features')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
             >
               🚀 Start Your Journey
             </motion.button>
@@ -95,6 +101,12 @@ const Hero: React.FC = () => {
               className="btn-ghost-startup px-8 py-4 text-lg font-semibold"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                document.getElementById('interactive')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
             >
               📊 See Demo
             </motion.button>
@@ -265,6 +277,12 @@ const Hero: React.FC = () => {
                   }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ duration: 0.2 }}
+                  onClick={() => {
+                    document.getElementById('features')?.scrollIntoView({ 
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }}
                 >
                   ✨ Optimize
                 </motion.button>
@@ -276,6 +294,12 @@ const Hero: React.FC = () => {
                   }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ duration: 0.2 }}
+                  onClick={() => {
+                    document.getElementById('interactive')?.scrollIntoView({ 
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }}
                 >
                   📊 Analyze
                 </motion.button>
