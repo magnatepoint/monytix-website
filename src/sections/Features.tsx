@@ -3,29 +3,248 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { features } from '../data/features.ts';
 import { Feature } from '../types/index';
 import * as Icons from 'lucide-react';
-import { Search, Grid, List, Sparkles } from 'lucide-react';
+import { Search, Grid, List, Sparkles, Building2, User, Eye, BarChart3 } from 'lucide-react';
 
 const Features: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState<'bento' | 'grid'>('grid');
+  const [activeTab, setActiveTab] = useState<'personal' | 'business'>('personal');
 
-  // Get actual categories from the data
+  // Business features data
+  const businessFeatures: Feature[] = [
+    {
+      id: 'bizboard',
+      name: 'BizBoard',
+      tagline: 'Your centralized business financial dashboard',
+      description: 'One place to see cash flow, revenues, expenses, and account balances in real time — AI-powered dashboards tailored for founders and finance heads.',
+      icon: 'LayoutDashboard',
+      color: 'from-blue-500 to-indigo-600',
+      category: 'core',
+      features: [
+        'Real-time cash position monitoring',
+        'Inflow and outflow tracking',
+        'Account balance aggregation',
+        'Burn rate calculation',
+        'AI-powered financial dashboards'
+      ]
+    },
+    {
+      id: 'bizbudget',
+      name: 'BizBudget',
+      tagline: 'Set operational budgets across departments, let AI keep you on track.',
+      description: 'Set monthly budgets across departments (SaaS, travel, payroll), track actual vs planned, and receive AI nudges when overspending.',
+      icon: 'PieChart',
+      color: 'from-green-500 to-emerald-600',
+      category: 'planning',
+      features: [
+        'Department budget setting',
+        'Actual vs planned tracking',
+        'AI overspending alerts',
+        'SaaS expense monitoring',
+        'Travel and payroll budgets'
+      ]
+    },
+    {
+      id: 'bizspend',
+      name: 'bizSpend',
+      tagline: 'Track and categorize every business expense automatically',
+      description: 'Automatically categorize vendor payouts, SaaS tools, salaries, etc. Spot cost centers and optimize vendor spend.',
+      icon: 'TrendingUp',
+      color: 'from-orange-500 to-red-600',
+      category: 'insights',
+      features: [
+        'Automatic expense categorization',
+        'Vendor payout tracking',
+        'SaaS tools monitoring',
+        'Cost center identification',
+        'Vendor spend optimization'
+      ]
+    },
+    {
+      id: 'bizreserve',
+      name: 'BizReserve',
+      tagline: 'Plan and track financial reserves with smart funding suggestions.',
+      description: 'Create business reserves for payroll, taxes, rainy days. Get suggestions on ideal reserve size and savings strategy.',
+      icon: 'Target',
+      color: 'from-purple-500 to-violet-600',
+      category: 'planning',
+      features: [
+        'Financial reserve planning',
+        'Tax reserve tracking',
+        'Payroll reserve management',
+        'Emergency fund setup',
+        'Smart funding suggestions'
+      ]
+    },
+    {
+      id: 'bizlearn',
+      name: 'BizLearn',
+      tagline: 'Short, visual lessons,simplified for business owners.',
+      description: 'Short, visual lessons on working capital, compliance, pricing, burn rate, and funding — simplified for business owners.',
+      icon: 'GraduationCap',
+      color: 'from-gold-400 to-gold-600',
+      category: 'engagement',
+      features: [
+        'Working capital lessons',
+        'Compliance education',
+        'Pricing strategy insights',
+        'Burn rate understanding',
+        'Funding guidance'
+      ]
+    },
+    {
+      id: 'bizforecast',
+      name: 'BizForecast',
+      tagline: 'Forecast cash flow, runway, and future spend',
+      description: 'AI-driven cash flow projections, revenue modeling, and runway calculators. Play out what-if scenarios like raising capital or hiring.',
+      icon: 'Zap',
+      color: 'from-gold-500 to-gold-600',
+      category: 'planning',
+      features: [
+        'Cash flow forecasting',
+        'Runway calculation',
+        'What-if scenario modeling',
+        'Revenue projections',
+        'Hiring impact analysis'
+      ]
+    },
+    {
+      id: 'bizpulse',
+      name: 'BizPulse',
+      tagline: 'AI-powered behavioral nudges',
+      description: 'Personalized nudges like: "Pay GST by 20th," or "Rent has increased 20% vs last quarter." AI monitors and reminds you.',
+      icon: 'Bell',
+      color: 'from-yellow-500 to-orange-600',
+      category: 'engagement',
+      features: [
+        'Spend anomaly alerts',
+        'Tax deadline reminders',
+        'Vendor payment notifications',
+        'Behavioral habit tracking',
+        'Personalized AI nudges'
+      ]
+    },
+    {
+      id: 'bizgoals',
+      name: 'BizGoals',
+      tagline: 'Set financial goals and track progress visually.',
+      description: 'Define goals like "₹10L in monthly revenue" or "cut SaaS spend by 15%." Visual goal tracking and alerts help teams stay aligned.',
+      icon: 'Compass',
+      color: 'from-emerald-500 to-green-600',
+      category: 'planning',
+      features: [
+        'Revenue milestone tracking',
+        'Cost reduction targets',
+        'Funding objectives',
+        'Visual progress tracking',
+        'Team alignment alerts'
+      ]
+    },
+    {
+      id: 'bizinsight',
+      name: 'BizInsight',
+      tagline: 'AI-generated narrative insights from your data',
+      description: 'Narrative insights on sales trends, top vendors, high spend areas, or seasonality. AI turns raw data into business advice.',
+      icon: 'Brain',
+      color: 'from-violet-500 to-purple-600',
+      category: 'insights',
+      features: [
+        'Spend pattern analysis',
+        'Vendor shift insights',
+        'Seasonality detection',
+        'Sales trend analysis',
+        'AI-generated narratives'
+      ]
+    },
+    {
+      id: 'bizrewards',
+      name: 'BizRewards',
+      tagline: 'Earn rewards',
+      description: 'Unlock benefits (like cashback on tools or credit offers) when you manage cash flow well or maintain strong reserves.',
+      icon: 'Gift',
+      color: 'from-pink-500 to-rose-600',
+      category: 'engagement',
+      features: [
+        'Cashback rewards',
+        'SaaS credit offers',
+        'Funding opportunities',
+        'Reserve maintenance rewards',
+        'Budget management benefits'
+      ]
+    },
+    {
+      id: 'bizvision',
+      name: 'BizVision',
+      tagline: 'Plan your long-term exit strategy',
+      description: 'For founders: visualize exit strategies, profit goals, investor payouts, and long-term financial strategy.',
+      icon: 'Eye',
+      color: 'from-gold-400 to-gold-700',
+      category: 'planning',
+      features: [
+        'Exit strategy planning',
+        'Founder equity visualization',
+        'Investor return modeling',
+        'Profit target setting',
+        'Long-term strategy planning'
+      ]
+    },
+    {
+      id: 'molybot-business',
+      name: 'MolyBot',
+      tagline: 'Conversational AI for business finances',
+      description: 'Ask: "What\'s my burn rate?", "How much did I pay Razorpay last month?" or "Show me biggest expenses this quarter."',
+      icon: 'MessageCircle',
+      color: 'from-gold-300 to-gold-800',
+      category: 'core',
+      features: [
+        'Burn rate queries',
+        'Tax deadline questions',
+        'SaaS spend analysis',
+        'Vendor payment tracking',
+        'Expense trend reporting'
+      ]
+    },
+    {
+      id: 'benchmarkiq',
+      name: 'BenchMarkIQ',
+      tagline: 'Compare your business',
+      description: 'Compare your business expenses, revenue ratios, or vendor costs against similar companies in your industry or size.',
+      icon: 'BarChart3',
+      color: 'from-teal-500 to-cyan-600',
+      category: 'insights',
+      features: [
+        'Industry benchmarking',
+        'Revenue ratio comparison',
+        'Vendor cost analysis',
+        'Peer company insights',
+        'Performance metrics'
+      ]
+    }
+  ];
+
+  // Get features based on active tab
+  const currentFeatures = useMemo(() => {
+    return activeTab === 'personal' ? features : businessFeatures;
+  }, [activeTab]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Get actual categories from the current features data
   const categories = useMemo(() => {
+    const currentFeaturesData = activeTab === 'personal' ? features : businessFeatures;
     return [
-      { id: 'all', name: 'All Features', icon: Grid, count: features.length },
-      { id: 'core', name: 'Core Tools', icon: Sparkles, count: features.filter(f => f.category === 'core').length },
-      { id: 'planning', name: 'Planning', icon: Icons.Target, count: features.filter(f => f.category === 'planning').length },
-      { id: 'insights', name: 'AI Insights', icon: Icons.Brain, count: features.filter(f => f.category === 'insights').length },
-      { id: 'engagement', name: 'Engagement', icon: Icons.Heart, count: features.filter(f => f.category === 'engagement').length }
+      { id: 'all', name: 'All Features', icon: Grid, count: currentFeaturesData.length },
+      { id: 'core', name: 'Core Tools', icon: Sparkles, count: currentFeaturesData.filter(f => f.category === 'core').length },
+      { id: 'planning', name: 'Planning', icon: Icons.Target, count: currentFeaturesData.filter(f => f.category === 'planning').length },
+      { id: 'insights', name: 'AI Insights', icon: Icons.Brain, count: currentFeaturesData.filter(f => f.category === 'insights').length },
+      { id: 'engagement', name: 'Engagement', icon: Icons.Heart, count: currentFeaturesData.filter(f => f.category === 'engagement').length }
     ];
-  }, []);
+  }, [activeTab]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Filter features based on category and search
   const filteredFeatures = useMemo(() => {
     let filtered = selectedCategory === 'all' 
-      ? features 
-      : features.filter(feature => feature.category === selectedCategory);
+      ? currentFeatures 
+      : currentFeatures.filter(feature => feature.category === selectedCategory);
     
     if (searchTerm) {
       filtered = filtered.filter(feature =>
@@ -36,7 +255,7 @@ const Features: React.FC = () => {
     }
     
     return filtered;
-  }, [selectedCategory, searchTerm]);
+  }, [selectedCategory, searchTerm, currentFeatures]);
 
   // Improved Bento layout with better consistency
   const getBentoLayout = (index: number, total: number) => {
@@ -179,10 +398,69 @@ const Features: React.FC = () => {
             Meet Your
             <span className="text-gold"> Money Squad</span> 🎯
           </h2>
-          <p className="text-xl text-chill max-w-3xl mx-auto">
+          <p className="text-xl text-chill max-w-3xl mx-auto mb-8">
             14 AI-powered tools working together to turn you from "Where did my money go?" 
             to becoming a financial wizard 🧙‍♂️
           </p>
+
+          {/* Tab Navigation */}
+          <motion.div
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-midnight-800/50 rounded-2xl p-2 flex items-center space-x-2">
+              <motion.button
+                onClick={() => {
+                  setActiveTab('personal');
+                  setSelectedCategory('all');
+                  setSearchTerm('');
+                }}
+                className={`flex items-center space-x-3 px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
+                  activeTab === 'personal'
+                    ? 'btn-startup shadow-lg'
+                    : 'text-chill hover:text-electric hover:bg-electric-500/10'
+                }`}
+                whileHover={{ 
+                  y: -2,
+                  transition: { duration: 0.15 }
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <User className="h-4 w-4" />
+                <span>Personal</span>
+                <span className="text-sm px-2 py-1 rounded-full bg-electric-500/20">
+                  {features.length}
+                </span>
+              </motion.button>
+              
+              <motion.button
+                onClick={() => {
+                  setActiveTab('business');
+                  setSelectedCategory('all');
+                  setSearchTerm('');
+                }}
+                className={`flex items-center space-x-3 px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
+                  activeTab === 'business'
+                    ? 'btn-startup shadow-lg'
+                    : 'text-chill hover:text-electric hover:bg-electric-500/10'
+                }`}
+                whileHover={{ 
+                  y: -2,
+                  transition: { duration: 0.15 }
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Building2 className="h-4 w-4" />
+                <span>Business</span>
+                <span className="text-sm px-2 py-1 rounded-full bg-electric-500/20">
+                  13
+                </span>
+              </motion.button>
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Search & Controls */}
@@ -275,13 +553,13 @@ const Features: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
-          key={`${selectedCategory}-${searchTerm}`}
+          key={`${activeTab}-${selectedCategory}-${searchTerm}`}
         >
           <p className="text-chill">
             {searchTerm ? (
-              <>Found <span className="text-electric font-bold">{filteredFeatures.length}</span> features matching "<span className="text-electric">{searchTerm}</span>"</>
+              <>Found <span className="text-electric font-bold">{filteredFeatures.length}</span> {activeTab} features matching "<span className="text-electric">{searchTerm}</span>"</>
             ) : (
-              <>Showing <span className="text-electric font-bold">{filteredFeatures.length}</span> {selectedCategory === 'all' ? 'features' : `${selectedCategory} features`}</>
+              <>Showing <span className="text-electric font-bold">{filteredFeatures.length}</span> {activeTab} {selectedCategory === 'all' ? 'features' : `${selectedCategory} features`}</>
             )}
           </p>
         </motion.div>
@@ -289,7 +567,7 @@ const Features: React.FC = () => {
         {/* Features Grid */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={`${selectedCategory}-${searchTerm}-${viewMode}`}
+            key={`${activeTab}-${selectedCategory}-${searchTerm}-${viewMode}`}
             className={
               viewMode === 'bento' 
                 ? "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr gap-6 mb-16"
@@ -324,6 +602,7 @@ const Features: React.FC = () => {
                   onClick={() => {
                     setSearchTerm('');
                     setSelectedCategory('all');
+                    setActiveTab('personal');
                   }}
                   className="btn-startup"
                   whileHover={{ scale: 1.05 }}
