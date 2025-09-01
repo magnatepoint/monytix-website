@@ -113,8 +113,16 @@ const Hero: React.FC = () => {
             {/* Main Dashboard Card */}
             <motion.div
               className="card-startup rounded-3xl p-4 md:p-5 lg:p-6 shadow-2xl hover-float relative z-10"
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               whileHover={{ scale: 1.02, rotateY: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 300,
+                duration: 0.8,
+                delay: 0.2
+              }}
+              viewport={{ once: true, margin: "-100px" }}
             >
               {/* Header */}
               <div className="flex items-center justify-between mb-4">
@@ -140,27 +148,79 @@ const Hero: React.FC = () => {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <motion.div 
                   className="bg-gradient-electric text-white rounded-2xl p-4 text-center"
+                  initial={{ opacity: 0, x: -30, scale: 0.8 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
                   whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
                 >
-                  <div className="text-2xl font-bold mb-1">₹</div>
-                  <div className="text-lg font-bold">6.8L</div>
+                  <motion.div 
+                    className="text-2xl font-bold mb-1"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    ₹
+                  </motion.div>
+                  <motion.div 
+                    className="text-lg font-bold"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    viewport={{ once: true }}
+                  >
+                    6.8L
+                  </motion.div>
                   <div className="text-xs opacity-80">This Month</div>
                 </motion.div>
                 <motion.div 
                   className="bg-gradient-neon text-white rounded-2xl p-4 text-center"
+                  initial={{ opacity: 0, x: 30, scale: 0.8 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
                   whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  viewport={{ once: true }}
                 >
-                  <Target className="h-6 w-6 mx-auto mb-2" />
-                  <div className="text-lg font-bold">89%</div>
+                  <motion.div
+                    initial={{ opacity: 0, rotate: -180 }}
+                    whileInView={{ opacity: 1, rotate: 0 }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
+                    viewport={{ once: true }}
+                  >
+                    <Target className="h-6 w-6 mx-auto mb-2" />
+                  </motion.div>
+                  <motion.div 
+                    className="text-lg font-bold"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.9 }}
+                    viewport={{ once: true }}
+                  >
+                    89%
+                  </motion.div>
                   <div className="text-xs opacity-80">Goals Hit</div>
                 </motion.div>
               </div>
 
               {/* Interactive Chart */}
-              <div className="bg-midnight-800/30 rounded-2xl p-4 mb-4">
+              <motion.div 
+                className="bg-midnight-800/30 rounded-2xl p-4 mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-sm text-chill">Weekly Spending</span>
-                  <BarChart3 className="h-4 w-4 text-electric-400" />
+                  <motion.div
+                    initial={{ opacity: 0, rotate: 90 }}
+                    whileInView={{ opacity: 1, rotate: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    viewport={{ once: true }}
+                  >
+                    <BarChart3 className="h-4 w-4 text-electric-400" />
+                  </motion.div>
                 </div>
                 <div className="flex items-end justify-between h-16 space-x-1">
                   {[40, 65, 45, 80, 60, 90, 75].map((height, i) => (
@@ -168,49 +228,208 @@ const Hero: React.FC = () => {
                       key={i}
                       className="bg-gradient-electric rounded-t-sm flex-1"
                       style={{ height: `${height}%` }}
-                      initial={{ height: 0 }}
-                      animate={{ height: `${height}%` }}
-                      transition={{ delay: i * 0.1, duration: 0.5 }}
-                      whileHover={{ opacity: 0.8 }}
+                      initial={{ height: 0, opacity: 0 }}
+                      whileInView={{ 
+                        height: `${height}%`,
+                        opacity: 1
+                      }}
+                      transition={{ 
+                        delay: i * 0.1 + 0.8, 
+                        duration: 0.6,
+                        ease: "easeOut"
+                      }}
+                      whileHover={{ 
+                        opacity: 0.8,
+                        scale: 1.1,
+                        transition: { duration: 0.2 }
+                      }}
+                      viewport={{ once: true }}
                     />
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Action Buttons */}
-              <div className="flex space-x-2">
-                <button className="flex-1 btn-startup py-2 text-sm animate-startup-pulse">
+              <motion.div 
+                className="flex space-x-2"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                viewport={{ once: true }}
+              >
+                <motion.button 
+                  className="flex-1 btn-startup py-2 text-sm animate-startup-pulse"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 10px 25px rgba(255, 165, 0, 0.3)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
                   ✨ Optimize
-                </button>
-                <button className="flex-1 btn-ghost-startup py-2 text-sm">
+                </motion.button>
+                <motion.button 
+                  className="flex-1 btn-ghost-startup py-2 text-sm"
+                  whileHover={{ 
+                    scale: 1.05,
+                    backgroundColor: "rgba(255, 165, 0, 0.1)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
                   📊 Analyze
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
             </motion.div>
 
-            {/* Floating Elements - Hidden on mobile to prevent overlap */}
+            {/* Floating Elements with Enhanced Micro-interactions */}
+            
+            {/* Top Right - Sparkle Element */}
             <motion.div
-              className="absolute -top-4 -right-4 bg-gradient-neon text-white rounded-full p-3 shadow-lg z-20 hidden md:block"
+              className="absolute -top-6 -right-6 bg-gradient-neon text-white rounded-full p-4 shadow-lg z-20 hidden md:block cursor-pointer"
               animate={{ 
                 rotate: 360,
-                scale: [1, 1.1, 1]
+                scale: [1, 1.1, 1],
+                y: [0, -5, 0]
               }}
               transition={{ 
                 rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                scale: { duration: 2, repeat: Infinity }
+                scale: { duration: 2, repeat: Infinity },
+                y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
               }}
+              whileHover={{ 
+                scale: 1.2,
+                rotate: 180,
+                transition: { duration: 0.3 }
+              }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Zap className="h-4 w-4" />
+              <Zap className="h-5 w-5" />
             </motion.div>
 
+            {/* Bottom Left - Savings Badge */}
             <motion.div
-              className="absolute -bottom-6 -left-6 bg-gradient-sunset text-white rounded-2xl p-4 shadow-lg z-20 hidden md:block"
-              animate={{ y: [-10, 10, -10] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-8 -left-8 bg-gradient-sunset text-white rounded-2xl p-4 shadow-lg z-20 hidden md:block cursor-pointer"
+              animate={{ 
+                y: [-10, 10, -10],
+                rotate: [0, 2, -2, 0]
+              }}
+              transition={{ 
+                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+              }}
+              whileHover={{ 
+                scale: 1.1,
+                y: -15,
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{ scale: 0.95 }}
             >
               <div className="text-lg font-bold">+₹2,03,000</div>
               <div className="text-xs opacity-80">Saved this month</div>
             </motion.div>
+
+            {/* Top Left - AI Brain */}
+            <motion.div
+              className="absolute -top-4 -left-4 bg-gradient-purple text-white rounded-full p-3 shadow-lg z-20 hidden md:block cursor-pointer"
+              animate={{ 
+                scale: [1, 1.05, 1],
+                rotate: [0, 5, -5, 0]
+              }}
+              transition={{ 
+                scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                rotate: { duration: 8, repeat: Infinity, ease: "easeInOut" }
+              }}
+              whileHover={{ 
+                scale: 1.3,
+                rotate: 360,
+                transition: { duration: 0.5 }
+              }}
+              whileTap={{ scale: 0.8 }}
+            >
+              <div className="text-xl">🧠</div>
+            </motion.div>
+
+            {/* Bottom Right - Growth Chart */}
+            <motion.div
+              className="absolute -bottom-4 -right-4 bg-gradient-electric text-white rounded-xl p-3 shadow-lg z-20 hidden md:block cursor-pointer"
+              animate={{ 
+                y: [0, -8, 0],
+                scale: [1, 1.05, 1]
+              }}
+              transition={{ 
+                y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+              }}
+              whileHover={{ 
+                scale: 1.2,
+                y: -12,
+                transition: { duration: 0.3 }
+              }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <TrendingUp className="h-4 w-4" />
+            </motion.div>
+
+            {/* Center Top - Floating Notification */}
+            <motion.div
+              className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gradient-gold text-white rounded-full px-4 py-2 shadow-lg z-20 hidden md:block"
+              animate={{ 
+                y: [0, -5, 0],
+                opacity: [0.8, 1, 0.8]
+              }}
+              transition={{ 
+                y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                opacity: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+              }}
+              whileHover={{ 
+                scale: 1.1,
+                y: -8,
+                transition: { duration: 0.2 }
+              }}
+            >
+              <div className="text-sm font-semibold">✨ AI Powered</div>
+            </motion.div>
+
+            {/* Data Points - Scattered around dashboard */}
+            <motion.div
+              className="absolute top-1/4 -right-2 bg-electric-500/20 rounded-full w-3 h-3 z-10 hidden md:block"
+              animate={{ 
+                scale: [1, 1.5, 1],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute bottom-1/3 -left-2 bg-neon-500/20 rounded-full w-2 h-2 z-10 hidden md:block"
+              animate={{ 
+                scale: [1, 2, 1],
+                opacity: [0.3, 0.8, 0.3]
+              }}
+              transition={{ 
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+            />
+            <motion.div
+              className="absolute top-1/2 -right-4 bg-sunset-500/20 rounded-full w-4 h-4 z-10 hidden md:block"
+              animate={{ 
+                scale: [1, 1.8, 1],
+                opacity: [0.4, 1, 0.4]
+              }}
+              transition={{ 
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5
+              }}
+            />
           </div>
         </motion.div>
       </div>
