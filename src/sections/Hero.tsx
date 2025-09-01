@@ -19,13 +19,13 @@ const Hero: React.FC = () => {
       <div className="relative min-h-screen flex flex-col lg:flex-row">
         {/* LEFT SIDE - Content */}
         <motion.div 
-          className="w-full lg:w-1/2 flex flex-col justify-center p-4 md:p-6 lg:p-8 relative"
+          className="w-full lg:w-1/2 flex flex-col justify-center items-center text-center p-4 md:p-6 lg:p-8 relative"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {/* Badges */}
-          <motion.div className="flex flex-wrap gap-3 mb-6">
+          <motion.div className="flex flex-wrap gap-3 mb-8 justify-center">
             <motion.div
               className="inline-flex items-center space-x-1 card-startup rounded-full px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm font-bold text-gold glow-startup"
               whileHover={{ scale: 1.05 }}
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
 
           {/* Main Headline */}
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-8xl font-bold font-display leading-tight text-startup mb-4 relative z-10"
+            className="text-5xl md:text-6xl lg:text-8xl font-bold font-display leading-tight text-startup mb-6 relative z-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
 
           {/* Subtitle */}
           <motion.p
-            className="text-xl md:text-2xl text-chill leading-relaxed mb-6 max-w-2xl relative z-10"
+            className="text-xl md:text-2xl text-chill leading-relaxed mb-8 max-w-3xl relative z-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -76,6 +76,29 @@ const Hero: React.FC = () => {
             🚀 Stop stressing about money! Our AI connects everything, 
             tracks spending, and gives you insights that make you go "wow, why didn't I know this before?"
           </motion.p>
+
+          {/* Call to Action */}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <motion.button
+              className="btn-startup px-8 py-4 text-lg font-semibold"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              🚀 Start Your Journey
+            </motion.button>
+            <motion.button
+              className="btn-ghost-startup px-8 py-4 text-lg font-semibold"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              📊 See Demo
+            </motion.button>
+          </motion.div>
         </motion.div>
 
         {/* RIGHT SIDE - Interactive Dashboard */}
